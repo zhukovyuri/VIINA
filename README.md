@@ -220,3 +220,10 @@ A quick guide to what some the words mean:
 - GEO_API: Geocoding API used to locate event
 - t_[event type]: Predicted probability that report describes event of each type (from LSTM model, see above)
 - a_[actor]: Predicted probability that report describes event initiated by each actor (from LSTM model, see above)
+
+
+## Coming soon
+
+Territorial control, at the level of individual populated places:
+
+![All events](Figures/Maps/map_ctr_latest.png)
