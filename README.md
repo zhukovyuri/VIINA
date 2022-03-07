@@ -1,5 +1,5 @@
 # ВІЙНА.ВОЙНА.VIINA
-№# Violent Incident Information from News Articles on the 2022 Russian Invasion of Ukraine
+# Violent Incident Information from News Articles on the 2022 Russian Invasion of Ukraine
 
 This is a near-real time multi-source event data system for the 2022 Russian Invasion of Ukraine. These data are based on news reports from Ukrainian and Russian media, which were geocoded and classified into standard conflict event categories through machine learning. 
 
@@ -8,6 +8,10 @@ The most recent version of the data is available as a comma-delimited-text (csv)
 - Data/events_[YYYYMMDDHHMMSS].csv
 
 where "YYYYMMDDHHMMSS" is a time stamp (e.g. 202202240001 is "00:01, February 24, 2022").
+
+Please cite this data source as:
+
+ - Zhukov, Yuri (2022). "VIINA: Violent Incident Information from News Articles on the 2022 Russian Invasion of Ukraine." Dataset. ([https://github.com/zhukovyuri/VIINA](github.com/zhukovyuri/VIINA), accessed [DATE]).
 
 This resource will be regularly updated. Corrections, feedback welcome: [zhukov-at-umich-dot-edu](mailto:zhukov@umich.edu).
 
