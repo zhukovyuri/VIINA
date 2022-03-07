@@ -1,5 +1,5 @@
-# VIINA
-# Violent Incident Information from News Articles on the 2022 Russian Invasion of Ukraine
+# ВІЙНА.ВОЙНА.VIINA
+№# Violent Incident Information from News Articles on the 2022 Russian Invasion of Ukraine
 
 This is a near-real time multi-source event data system for the 2022 Russian Invasion of Ukraine. These data are based on news reports from Ukrainian and Russian media, which were geocoded and classified into standard conflict event categories through machine learning. 
 
@@ -50,7 +50,7 @@ Below is a map of **all** geocoded event reports since the start of Russia's mil
 Below are a map and timeline, showing the subset of **war-related** geocoded event reports (i.e. t_mil_pred > .9, see below for details).
 
 ![War events](Figures/Maps/map_war_latest.png "War event reports, by location")
-![War events](Figures/Maps/time_war_latest.png "War event reports, by time")
+![War events](Figures/Time/time_war_latest.png "War event reports, by time")
 
 
 ## Event classification
@@ -138,7 +138,7 @@ Below are illustrative word clouds for several categories of events. The font si
 
 A quick guide to what some the words mean. Two examples:
 
-- Sanctions: the big word in center is the Ukrainian word for sanctions ("санкції", pronounced "sanktsii"). Below that is "сша" ("ssha", or USA) and "країни" ("krayiny", or countries). There are also terms there for sanctions related to SWIFT (at bottom) and restricting airspace to Russian aircraft ("повітряний простір"/"povitryannyy prostir", meaning airspace).
+- Sanctions: the big word in center is the Ukrainian word for sanctions ("санкції", pronounced "sanktsii"). Below that is "сша" ("ssha", or USA) and "країни" ("krayiny", or countries). There are also terms there for sanctions related to SWIFT and restricting airspace to Russian aircraft ("повітряний простір"/"povitryannyy prostir", meaning airspace).
 
 - Military casualties: "понад" ("ponad") means "more than"; "втрати" ("vtraty") means "losses"; "зсу" ("zsu") is the acronym for Armed Forces of Ukraine; "окупантів" ("okupantiv") means "of occupiers"; "танків" ("tankiv") means "of tanks"; "осіб" ("osib") means "of persons".
 
