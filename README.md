@@ -144,8 +144,7 @@ A quick guide to what some the words mean:
 ![wc_t_mil_test](Figures/WC/wc_t_arrest_test.png)
 
 - "затримали" (zatrymaly) means "arrested" or "detained"
-- "военных" (voennykh) means "of military"
-- "окупантів" (okupantiv) means "of occupiers"
+- "взяли в полон" (vzyaly v polon) means "taken prisoner"
 
 
 ### Tank battles (t_armor_pred)
