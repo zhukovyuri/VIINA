@@ -1,6 +1,8 @@
 # VIINA / Violent Incident Information from News Articles 
 ## 2022 Russian Invasion of Ukraine
 
+![All events](Figures/Maps/map_anim_latest.gif)
+
 VIINA/ВІЙНА/ВОЙНА/WAR is a near-real time multi-source event data system for the 2022 Russian Invasion of Ukraine. These data are based on news reports from Ukrainian and Russian media, which were geocoded and classified into standard conflict event categories through machine learning. 
 
 These data are GIS-ready, with temporal precision down to the minute. Each observation is accompanied by full source information, text and URLs.
@@ -43,7 +45,6 @@ This set of sources may expand/change as the war unfolds -- due to interruptions
 
 Using an automated web scraping routine (which runs every 6 hours), VIINA extracts the text of news reports published by each source and their associated metadata (publication time and date, web urls). Using natural language processing, the system extracts and geocodes location names mentioned in each news item. A recurrent neural network then classifies each event report into several pre-defined categories.
 
-![All events](Figures/Maps/map_anim_latest.gif)
 
 
 ## Geocoding
