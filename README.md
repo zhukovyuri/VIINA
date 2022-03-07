@@ -1,6 +1,6 @@
 # ВІЙНА.ВОЙНА.VIINA
 ## VIINA / Violent Incident Information from News Articles 
-### 2022 Russian Invasion of Ukraine
+## 2022 Russian Invasion of Ukraine
 
 This is a near-real time multi-source event data system for the 2022 Russian Invasion of Ukraine. These data are based on news reports from Ukrainian and Russian media, which were geocoded and classified into standard conflict event categories through machine learning. 
 
