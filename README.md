@@ -43,7 +43,7 @@ This set of sources may expand/change as the war unfolds -- due to interruptions
 
 Using an automated web scraping routine (which runs every 6 hours), VIINA extracts the text of news reports published by each source and their associated metadata (publication time and date, web urls). Using natural language processing, the system extracts and geocodes location names mentioned in each news item. A recurrent neural network then classifies each event report into several pre-defined categories.
 
-![All events](Figures/Maps/map_anim_latest.gif "All event reports, hour by hour")
+![All events](Figures/Maps/map_anim_latest.gif)
 
 
 ## Geocoding
