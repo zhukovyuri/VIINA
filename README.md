@@ -5,13 +5,13 @@ This is a near-real time multi-source event data system for the 2022 Russian Inv
 
 The most recent version of the data is available as a comma-delimited-text (csv) file here:
 
-- Data/events_[YYYYMMDDHHMMSS].csv
+- [Data/events_[YYYYMMDDHHMMSS].csv](https://github.com/zhukovyuri/VIINA/tree/master/Data)
 
 where "YYYYMMDDHHMMSS" is a time stamp (e.g. 202202240001 is "00:01, February 24, 2022").
 
 Please cite this data source as:
 
- - Zhukov, Yuri (2022). "VIINA: Violent Incident Information from News Articles on the 2022 Russian Invasion of Ukraine." Dataset. ([https://github.com/zhukovyuri/VIINA](github.com/zhukovyuri/VIINA), accessed [DATE]).
+ - Zhukov, Yuri (2022). "VIINA: Violent Incident Information from News Articles on the 2022 Russian Invasion of Ukraine." Ann Arbor: University of Michigan, Center for Political Studies. ([https://github.com/zhukovyuri/VIINA](github.com/zhukovyuri/VIINA), accessed [DATE]).
 
 This resource will be regularly updated. Corrections, feedback welcome: [zhukov-at-umich-dot-edu](mailto:zhukov@umich.edu).
 
@@ -142,7 +142,7 @@ Below are illustrative word clouds for several categories of events. The font si
 
 A quick guide to what some the words mean. Two examples:
 
-- Sanctions: the big word in center is the Ukrainian word for sanctions ("санкції", pronounced "sanktsii"). Below that is "сша" ("ssha", or USA) and "країни" ("krayiny", or countries). There are also terms there for sanctions related to SWIFT and restricting airspace to Russian aircraft ("повітряний простір"/"povitryannyy prostir", meaning airspace).
+- Sanctions: the big words include the Ukrainian word for sanctions ("санкції", pronounced "sanktsii"), "сша" ("ssha", or USA) and "країни" ("krayiny", or countries). There are also terms there for sanctions related to SWIFT and restricting airspace to Russian aircraft ("повітряний простір"/"povitryannyy prostir", meaning airspace).
 
 - Military casualties: "понад" ("ponad") means "more than"; "втрати" ("vtraty") means "losses"; "зсу" ("zsu") is the acronym for Armed Forces of Ukraine; "окупантів" ("okupantiv") means "of occupiers"; "танків" ("tankiv") means "of tanks"; "осіб" ("osib") means "of persons".
 
