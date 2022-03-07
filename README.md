@@ -1,4 +1,4 @@
-# ВІЙНА.ВОЙНА.VIINA
+# ВІЙНА.ВОЙНА.VIINA.WAR
 ## VIINA / Violent Incident Information from News Articles 
 ## 2022 Russian Invasion of Ukraine
 
