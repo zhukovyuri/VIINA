@@ -1,8 +1,7 @@
-# ВІЙНА.ВОЙНА.VIINA.WAR
-## VIINA / Violent Incident Information from News Articles 
+# VIINA / Violent Incident Information from News Articles 
 ## 2022 Russian Invasion of Ukraine
 
-This is a near-real time multi-source event data system for the 2022 Russian Invasion of Ukraine. These data are based on news reports from Ukrainian and Russian media, which were geocoded and classified into standard conflict event categories through machine learning. 
+VIINA/ВІЙНА/ВОЙНА/WAR is a near-real time multi-source event data system for the 2022 Russian Invasion of Ukraine. These data are based on news reports from Ukrainian and Russian media, which were geocoded and classified into standard conflict event categories through machine learning. 
 
 These data are GIS-ready, with temporal precision down to the minute. Each observation is accompanied by full source information, text and URLs.
 
@@ -14,7 +13,7 @@ The most recent version of the data is available as a comma-delimited-text (csv)
 
 where "YYYYMMDDHHMMSS" is a time stamp (e.g. 202202240001 is "00:01, February 24, 2022").
 
-Please cite this data source as:
+Please cite this dataset as:
 
  - Zhukov, Yuri (2022). "VIINA: Violent Incident Information from News Articles on the 2022 Russian Invasion of Ukraine." Ann Arbor: University of Michigan, Center for Political Studies. ([https://github.com/zhukovyuri/VIINA](github.com/zhukovyuri/VIINA), accessed [DATE]).
 
@@ -97,59 +96,106 @@ Below are illustrative word clouds for several categories of events. The font si
 
 ![wc_t_mil_test](Figures/WC/wc_t_mil_test.png)
 
+A quick guide to what some the words mean:
+
+- "окупанти" (okupanty) means "occupiers" (in Ukrainian)
+- "зсу" (zsu) is the acronym for Armed Forces of Ukraine (in Ukrainian)
+
+
 ### Russian-initiated events (a_rus_pred)
 
 ![wc_t_mil_test](Figures/WC/wc_a_rus_test.png)
 
-### Ukrainian-initiated events (a_rus_pred)
+- "окупанти" (okupanty) means "occupiers" 
+- "ворог" (voroh) means "enemy"
+- "війска" (viyska) means "forces"
+
+
+### Ukrainian-initiated events (a_ukr_pred)
 
 ![wc_t_mil_test](Figures/WC/wc_a_ukr_test.png)
+
+- "зсу" (zsu) is the acronym for Armed Forces of Ukraine (in Ukrainian)
+- "всу" (vsu) is the acronym for Armed Forces of Ukraine (in Russian)
+- "заявили днр" (zayavili dnr) means "DNR has claimed" (in Russian)
+
 
 ### Sanctions (t_san_pred)
 
 ![wc_t_mil_test](Figures/WC/wc_t_san_test.png)
 
+- "санкції" (sanktsii) means "sanctions"
+- "сша" (ssha) means USA
+- there are also terms here for sanctions related to SWIFT, Visa, MasterCard
+
+
 ### Air strikes (t_airstrike_pred)
 
 ![wc_t_mil_test](Figures/WC/wc_t_airstrike_test.png)
+
+- "повітряна тривога" (povitryana tryvoha) means "air raid alert"
+
 
 ### Arrests or detentions of POWs (t_arrest_pred)
 
 ![wc_t_mil_test](Figures/WC/wc_t_arrest_test.png)
 
+- "затримали" (zatrymaly) means "arrested" or "detained"
+- "военных" (voennykh) means "of military"
+- "окупантів" (okupantiv) means "of occupiers"
+
+
 ### Tank battles (t_armor_pred)
 
 ![wc_t_mil_test](Figures/WC/wc_t_armor_test.png)
+
+- "танки" (tanki) means "tanks"
+- "окупантів" (okupantiv) means "of occupiers"
+
 
 ### Territorial control (t_control_pred)
 
 ![wc_t_mil_test](Figures/WC/wc_t_control_test.png)
 
-### Explosions, bombs, IEDs (t_ied_pred)
+- "голова ода" (holova oda) means "head of regional administration" (such officials sometimes make announcements about territorial control)
+- "місто" (misto) means "city"
+- "контролем" (kontrolem) means "[under] control"
 
-![wc_t_mil_test](Figures/WC/wc_t_ied_test.png)
 
 ### Firefights (t_firefight_pred)
 
 ![wc_t_mil_test](Figures/WC/wc_t_firefight_test.png)
 
+- "бої" (boyi) means "fighting" (in Ukrainian)
+- "бои" (boi) means "fighting" (in Russian)
+
+
 ### Artillery shelling and rocket strikes (t_artillery_pred)
 
 ![wc_t_mil_test](Figures/WC/wc_t_artillery_test.png)
+
+- "обстреляли" (obstrelyaly) means "shelled"
+- "ракети" (rakety) means "rockets"
+- "заявили днр" (zayavili dnr) means "DNR has claimed" (i.e. allegations of shelling by UA forces in Donbas)
+
 
 ### Military casualties (t_milcas_pred)
 
 ![wc_t_mil_test](Figures/WC/wc_t_milcas_test.png)
 
+- "понад" (ponad) means "more than"
+- "втрати" (vtraty) means "losses"
+- "окупантів" (okupantiv) means "of occupiers"
+- "загинули" (zahynuly) means "died"
+
+
 ### Civilian casualties (t_civcas_pred)
 
 ![wc_t_mil_test](Figures/WC/wc_t_civcas_test.png)
 
-A quick guide to what some the words mean. Two examples:
-
-- Sanctions: the big words include the Ukrainian word for sanctions ("санкції", pronounced "sanktsii"), "сша" ("ssha", or USA) and "країни" ("krayiny", or countries). There are also terms there for sanctions related to SWIFT and restricting airspace to Russian aircraft ("повітряний простір"/"povitryannyy prostir", meaning airspace).
-
-- Military casualties: "понад" ("ponad") means "more than"; "втрати" ("vtraty") means "losses"; "зсу" ("zsu") is the acronym for Armed Forces of Ukraine; "окупантів" ("okupantiv") means "of occupiers"; "танків" ("tankiv") means "of tanks"; "осіб" ("osib") means "of persons".
+- "поранені" (poraneni) means "wounded"
+- "людей" (lyudey) means "people"
+- "цивільних" (tsyvil'nykh) means "civilian"
 
 
 ## Codebook
