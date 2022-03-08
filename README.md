@@ -29,6 +29,7 @@ Corrections, feedback welcome: [zhukov-at-umich-dot-edu](mailto:zhukov@umich.edu
 - [24 Канал](https://24tv.ua/) ("24tvua"): Ukrainian 24 hour news network
 - [Forbes Ukraine](https://forbes.ua/) ("forbesua"): Ukrainian edition of Forbes magazine
 - [Інтерфакс-Україна](https://interfax.com.ua/) ("interfaxua"): Ukrainian affiliate of Russia's Interfax news wire service
+- [Комсомольская Правда](https://www.kp.ru/) ("kp"): Russian newspaper
 - [ЛІГА.net](https://www.liga.net/) ("liga"): Ukrainian internet news service       
 - [Мілітарний](https://mil.in.ua/uk/) ("militarnyy"): Ukrainian defense news portal
 - [Медиазона](https://zona.media/) ("mz"): Russian news portal (independent)
