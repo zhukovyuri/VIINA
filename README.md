@@ -227,3 +227,5 @@ A quick guide to what some the words mean:
 ## Coming soon
 
 Territorial control, at the level of individual populated places:
+
+![All events](Figures/Maps/map_ctr_latest.png)
