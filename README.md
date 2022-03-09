@@ -19,7 +19,12 @@ Please cite this dataset as:
 
  - Zhukov, Yuri (2022). "VIINA: Violent Incident Information from News Articles on the 2022 Russian Invasion of Ukraine." Ann Arbor: University of Michigan, Center for Political Studies. ([https://github.com/zhukovyuri/VIINA](github.com/zhukovyuri/VIINA), accessed [DATE]).
 
-Corrections, feedback welcome: [zhukov-at-umich-dot-edu](mailto:zhukov@umich.edu).
+Corrections, feedback welcome: 
+
+Yuri M. Zhukov, Associate Professor of Political Science, University of Michigan
+Research Associate Professor, Center for Political Studies, Institute for Social Research
+zhukov-at-umich-dot-edu. [sites.lsa.umich.edu/zhukov](http://sites.lsa.umich.edu/zhukov).
+
 
 
 ## Data Sources
