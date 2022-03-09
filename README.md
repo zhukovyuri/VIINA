@@ -32,12 +32,12 @@ Corrections, feedback welcome: [zhukov-at-umich-dot-edu](mailto:zhukov@umich.edu
 - [Комсомольская Правда](https://www.kp.ru/) ("kp"): Russian newspaper
 - [ЛІГА.net](https://www.liga.net/) ("liga"): Ukrainian internet news service       
 - [Мілітарний](https://mil.in.ua/uk/) ("militarnyy"): Ukrainian defense news portal
-- [Медиазона](https://zona.media/) ("mz"): Russian news portal (independent)
+- [Медиазона](https://zona.media/) ("mz"): Russian news portal
 - [НВ](https://nv.ua/ukr?utm_content=set_lang) ("nv"): Ukrainian magazine and internet news portal
 - [Независимая Газета](https://www.ng.ru/news/) ("ng"): Russian newspaper
 - [НТВ](https://www.ntv.ru/novosti/) ("ntv"): Russian television news
 - [Українська правда](https://www.pravda.com.ua/) ("pravdaua"): Ukrainian newspaper
-- [РИА Новости](https://ria.ru/) ("ria"): Russian news wire service (state-owned)
+- [РИА Новости](https://ria.ru/) ("ria"): Russian news wire service
 - [УНІАН](https://www.unian.info/) ("unian"): Ukrainian news wire service
 
 To be added soon: 
