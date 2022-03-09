@@ -179,7 +179,7 @@ A quick guide to what some the words mean:
 
 ![wc_t_mil_test](Figures/WC/wc_t_artillery_test.png)
 
-- "обстреляли" (obstrelyaly) means "shelled"
+- "обстріл" (obstril) means "shelling"
 - "ракети" (rakety) means "rockets"
 - "заявили днр" (zayavili dnr) means "DNR has claimed" (i.e. allegations of shelling by UA forces in Donbas)
 
