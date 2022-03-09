@@ -21,8 +21,8 @@ Please cite this dataset as:
 
 Corrections, feedback welcome: 
 
-Yuri M. Zhukov, Associate Professor of Political Science, University of Michigan
-Research Associate Professor, Center for Political Studies, Institute for Social Research
+Yuri M. Zhukov, Associate Professor of Political Science, University of Michigan. 
+Research Associate Professor, Center for Political Studies, Institute for Social Research.
 zhukov-at-umich-dot-edu. [sites.lsa.umich.edu/zhukov](http://sites.lsa.umich.edu/zhukov).
 
 
