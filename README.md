@@ -146,7 +146,7 @@ A quick guide to what some the words mean:
 
 ![wc_t_mil_test](Figures/WC/wc_t_aad_test.png)
 
-- "збили" (zbyly) means "show down"
+- "збили" (zbyly) means "shot down"
 - "літак" (litak) means "aircraft"
 
 
