@@ -224,6 +224,7 @@ A quick guide to what some the words mean:
 
 - "поранені" (poraneni) means "wounded"
 - "людей" (lyudey) means "people"
+- "дітей" (ditey) means "children"
 - "цивільних" (tsyvil'nykh) means "civilian"
 
 
