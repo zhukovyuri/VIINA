@@ -89,6 +89,7 @@ The data currently include the following event categories:
 - a_rus_pred: Event initiated by Russian or Russian-aligned armed forces
 - a_ukr_pred: Event initiated by Ukrainian or Ukrainian-aligned armed forces
 - a_other_pred: Event initiated by a third party (e.g. U.S., EU, Red Cross)
+- t_aad_pred: Anti-air defense, Buk, shoulder-fired missiles (Igla, Strela, Stinger)
 - t_airstrike_pred: Air strike, strategic bombing, helicopter strike
 - t_armor_pred: Tank battle or assault
 - t_arrest_pred: Arrest by security services or detention of prisoners of war
@@ -96,6 +97,7 @@ The data currently include the following event categories:
 - t_control_pred: Establishment/claim of territorial control over population center
 - t_firefight_pred: Any exchange of gunfire with handguns, semi-automatic rifles, automatic rifles, machine guns, rocket-propelled grenades (RPGs)
 - t_ied_pred: Improvised explosive device, roadside bomb, landmine, car bomb, explosion 
+- t_raid_pred: Assault/attack by paratroopers or special forces, usually followed by a retreat
 - t_milcas_pred: Event report mentions military casualties
 - t_civcas_pred: Event report mentions civilian casualties"    "t_nmil_pred" 
 
@@ -135,9 +137,17 @@ A quick guide to what some the words mean:
 
 ![wc_t_mil_test](Figures/WC/wc_t_san_test.png)
 
-- "санкції" (sanktsii) means "sanctions"
+- "санкції" (sanktsiyi) means "sanctions"
 - "сша" (ssha) means USA
 - there are also terms here for sanctions related to SWIFT, Visa, MasterCard
+
+
+### Anti-air defense (t_aad_pred)
+
+![wc_t_mil_test](Figures/WC/wc_t_aad_test.png)
+
+- "збили" (zbyly) means "show down"
+- "літак" (litak) means "aircraft"
 
 
 ### Air strikes (t_airstrike_pred)
@@ -187,6 +197,15 @@ A quick guide to what some the words mean:
 - "обстріл" (obstril) means "shelling"
 - "ракети" (rakety) means "rockets"
 - "заявили днр" (zayavili dnr) means "DNR has claimed" (i.e. allegations of shelling by UA forces in Donbas)
+
+
+### Raid (t_raid_pred)
+
+![wc_t_mil_test](Figures/WC/wc_t_raid_test.png)
+
+- "наступ" (nastup) means "advance/offensive"
+- "діверсантів" (diversantiv) means "of saboteurs/diversionary units"
+- "висадився десант" (vysadyvsya desant) means "paratroopers landed"
 
 
 ### Military casualties (t_milcas_pred)
