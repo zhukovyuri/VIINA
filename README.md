@@ -26,6 +26,14 @@ Research Associate Professor, Center for Political Studies, Institute for Social
 zhukov-at-umich-dot-edu. [sites.lsa.umich.edu/zhukov](http://sites.lsa.umich.edu/zhukov).
 
 
+## Interactive Map
+
+To select and read individual event reports by location and time, please take a look at the dashboard developed by Robert McGrath and Eric McGlinchey at the Schar School of Policy and Government:
+
+- [go.gmu.edu/ukraine](https://go.gmu.edu/ukraine)
+
+Many thanks to Rob and Eric for getting this dashboard up and running!
+
 
 ## Data Sources
 
