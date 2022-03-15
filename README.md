@@ -76,7 +76,7 @@ Below is a map of **all** geocoded event reports since the start of Russia's mil
 ![All events](Figures/Maps/map_all_latest.png "All event reports, by location")
 ![All events](Figures/Time/time_all_latest.png "All event reports, by time")
 
-Below are a map and timeline, showing the subset of **war-related** geocoded event reports (i.e. t_mil_pred > .9, see below for details).
+Below are a map and timeline, showing the subset of **war-related** geocoded event reports (i.e. t_mil_b == 1, see below for details).
 
 ![War events](Figures/Maps/map_war_latest.png "War event reports, by location")
 ![War events](Figures/Time/time_war_latest.png "War event reports, by time")
