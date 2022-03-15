@@ -32,7 +32,7 @@ To select and read individual event reports by location and time, please take a 
 
 - [go.gmu.edu/ukraine](https://go.gmu.edu/ukraine)
 
-![Dashboard](Figures/Screenshots/dashboard_1.png)
+[![Dashboard](Figures/Screenshots/dashboard_1.png)](https://go.gmu.edu/ukraine)
 
 Many thanks to Rob and Eric for getting this dashboard up and running!
 
