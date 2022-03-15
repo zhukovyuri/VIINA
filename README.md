@@ -103,6 +103,33 @@ The data currently include the following event categories:
 
 This set of categories will expand in the future, as more and different types of events are added to the text corpus.
 
+Below are in-sample prediction accuracy statistics for each variable (auc: area under the ROC curve, fitted values against training set labels), along with the number of events with probabilities greater than .10 (n_p10) and greater than .90 (n_p90). Note that these statistics are subject to change, as new events are added to the corpus and as the training set expands.
+
+
+|variable         |       auc| n_p10| n_p90|
+|:----------------|---------:|-----:|-----:|
+|t_mil_pred       | 0.9678527| 13360| 11143|
+|t_loc_pred       | 0.9494819| 21052|  8652|
+|t_san_pred       | 0.9516266| 23389|  1103|
+|a_rus_pred       | 0.8203621| 21274|  2250|
+|a_ukr_pred       | 0.7019541| 30341|  1097|
+|a_other_pred     | 0.8509668|   512|   508|
+|t_aad_pred       | 0.7464052|  1074|   142|
+|t_airstrike_pred | 0.8699295|   632|   631|
+|t_armor_pred     | 0.9107467|   317|   267|
+|t_arrest_pred    | 0.9389340|  4960|   367|
+|t_artillery_pred | 0.8835920|  6879|  2302|
+|t_control_pred   | 0.9687172|   843|   181|
+|t_killing_pred   | 0.7813179|    80|     0|
+|t_firefight_pred | 0.8294293|   426|   235|
+|t_ied_pred       | 0.8220120|   543|   510|
+|t_property_pred  | 0.7150516|   466|   465|
+|t_raid_pred      | 0.9465668|   584|   553|
+|t_occupy_pred    | 0.6801932|    39|    39|
+|t_milcas_pred    | 0.8950814|  2819|   163|
+|t_civcas_pred    | 0.8575454|   699|   697|
+
+
 Below are illustrative word clouds for several categories of events. The font size is proportional to word frequencies in news wire headlines predicted as being most likely to belong to each topic category (99th percentile of predicted probability). The clouds are for out-of-sample predictions on the full set of news stories in the corpus. 
 
 ### Events about war/military operations (t_mil_pred)
