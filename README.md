@@ -108,26 +108,26 @@ Below are in-sample prediction accuracy statistics for each variable (auc: area 
 
 |variable         |       auc| n_p10| n_p90|
 |:----------------|---------:|-----:|-----:|
-|t_mil_pred       | 0.9752711| 23504| 21289|
-|t_loc_pred       | 0.9744530| 22188| 16477|
-|t_san_pred       | 0.4539028| 34611|  1103|
-|a_rus_pred       | 0.9577333|  6739|  5691|
-|a_ukr_pred       | 0.7514911| 29987|  1098|
-|a_other_pred     | 0.6955617|    42|    38|
-|t_aad_pred       | 0.7263132|   383|   142|
-|t_airstrike_pred | 0.8688434|   632|   631|
-|t_armor_pred     | 0.9620730|   341|   291|
-|t_arrest_pred    | 0.8583866|   372|   367|
-|t_artillery_pred | 0.8983962|  3446|  3187|
-|t_control_pred   | 0.9672881|  2595|   162|
-|t_killing_pred   | 0.6126654|    79|     0|
-|t_firefight_pred | 0.8377903|   435|   244|
-|t_ied_pred       | 0.8721494|   540|   510|
-|t_property_pred  | 0.6749703|   466|   465|
-|t_raid_pred      | 0.9506738|   482|   451|
-|t_occupy_pred    | 0.6288647|   142|    28|
-|t_milcas_pred    | 0.6655695|   163|   163|
-|t_civcas_pred    | 0.8115210|   699|   697|
+|t_mil_pred       | 0.9791943| 20431| 14603|
+|t_loc_pred       | 0.9914633| 19194| 13667|
+|t_san_pred       | 0.9768209|  8898|  5504|
+|a_rus_pred       | 0.9713287|  5995|  4870|
+|a_ukr_pred       | 0.9803752|  2636|  2578|
+|a_other_pred     | 0.5347283|    42|    38|
+|t_aad_pred       | 0.4746550|   178|   142|
+|t_airstrike_pred | 0.8257969|   632|   631|
+|t_armor_pred     | 0.9781977|   452|   373|
+|t_arrest_pred    | 0.9798427|  1002|   723|
+|t_artillery_pred | 0.9852695|  3713|  3444|
+|t_control_pred   | 0.9688125|   990|   191|
+|t_killing_pred   | 0.6197749|    79|     0|
+|t_firefight_pred | 0.9381885|   483|   292|
+|t_ied_pred       | 0.8210011|   630|   510|
+|t_property_pred  | 0.7724413|  1039|  1038|
+|t_raid_pred      | 0.8788877|   482|   451|
+|t_occupy_pred    | 0.9159420|    35|    35|
+|t_milcas_pred    | 0.9102256|   840|   817|
+|t_civcas_pred    | 0.9802383|  1912|  1851|
 
 
 Below are illustrative word clouds for several categories of events. The font size is proportional to word frequencies in news wire headlines predicted as being most likely to belong to each topic category (99th percentile of predicted probability). The clouds are for out-of-sample predictions on the full set of news stories in the corpus. 
