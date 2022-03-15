@@ -92,53 +92,65 @@ Estimation was done in Python with the Keras library.
 
 The data currently include the following event categories:
 
-- t_mil_pred: Event is about war/military operations
-- t_nmil_pred: Event is not about war/military operations (e.g. human interest story)
-- t_loc_pred: Event report includes reference to specific location
-- t_san_pred: Event report mentions economic sanctions imposed on Russia
-- a_rus_pred: Event initiated by Russian or Russian-aligned armed forces
-- a_ukr_pred: Event initiated by Ukrainian or Ukrainian-aligned armed forces
-- a_other_pred: Event initiated by a third party (e.g. U.S., EU, Red Cross)
-- t_aad_pred: Anti-air defense, Buk, shoulder-fired missiles (Igla, Strela, Stinger)
-- t_airstrike_pred: Air strike, strategic bombing, helicopter strike
-- t_armor_pred: Tank battle or assault
-- t_arrest_pred: Arrest by security services or detention of prisoners of war
-- t_artillery_pred: Shelling by field artillery, howitzer, mortar, or rockets like Grad/BM-21, Uragan/BM-27, other Multiple Launch Rocket System (MRLS)
-- t_control_pred: Establishment/claim of territorial control over population center
-- t_firefight_pred: Any exchange of gunfire with handguns, semi-automatic rifles, automatic rifles, machine guns, rocket-propelled grenades (RPGs)
-- t_ied_pred: Improvised explosive device, roadside bomb, landmine, car bomb, explosion 
-- t_raid_pred: Assault/attack by paratroopers or special forces, usually followed by a retreat
-- t_milcas_pred: Event report mentions military casualties
-- t_civcas_pred: Event report mentions civilian casualties"    "t_nmil_pred" 
+- t_mil: Event is about war/military operations
+- t_nmil: Event is not about war/military operations (e.g. human interest story)
+- t_loc: Event report includes reference to specific location
+- t_san: Event report mentions economic sanctions imposed on Russia
+- a_rus: Event initiated by Russian or Russian-aligned armed forces
+- a_ukr: Event initiated by Ukrainian or Ukrainian-aligned armed forces
+- a_other: Event initiated by a third party (e.g. U.S., EU, Red Cross)
+- t_aad: Anti-air defense, Buk, shoulder-fired missiles (Igla, Strela, Stinger)
+- t_airstrike: Air strike, strategic bombing, helicopter strike
+- t_armor: Tank battle or assault
+- t_arrest: Arrest by security services or detention of prisoners of war
+- t_artillery: Shelling by field artillery, howitzer, mortar, or rockets like Grad/BM-21, Uragan/BM-27, other Multiple Launch Rocket System (MRLS)
+- t_control: Establishment/claim of territorial control over population center
+- t_firefight: Any exchange of gunfire with handguns, semi-automatic rifles, automatic rifles, machine guns, rocket-propelled grenades (RPGs)
+- t_ied: Improvised explosive device, roadside bomb, landmine, car bomb, explosion 
+- t_raid: Assault/attack by paratroopers or special forces, usually followed by a retreat
+- t_milcas: Event report mentions military casualties
+- t_civcas: Event report mentions civilian casualties
 
 This set of categories will expand in the future, as more and different types of events are added to the text corpus.
 
-Below are in-sample prediction accuracy statistics for each variable (auc: area under the ROC curve, fitted values against training set labels), along with the number of events with probabilities greater than .10 (n_p10) and greater than .90 (n_p90). Note that these statistics are subject to change, as new events are added to the corpus and as the training set expands.
+There are two versions of each variable included in the dataset:
+
+1. Predicted probabilities (ending with "\_pred"): predicted probability that event belongs to each category, from the LSTM model
+2. Binary indicators (ending with "\_b"): dummy variables, coded 1 or 0
+
+Cutoffs for dichotomizing the predicted probabilities were selected by minimizing Type I and Type II errors against the training set. For each variable, the algorithm considers every potential cutoff ranging from 0 to 1, compares the resulting binary values to training set labels, calculates rates of false positives and false negatives, and selects the cutoff that minimizes the sum of these rates. These cutoffs are different for each variable, and are enumerated in the table below.
+
+Below are in-sample prediction accuracy statistics for each variable (auc: area under the ROC curve, fitted values against training set labels), along with the number of events with probabilities greater than .10 (n_p10) and greater than .90 (n_p90). Also included are recommended cutoffs for dichotomizing each variable (cutoff_01).
 
 
-|variable         |       auc| n_p10| n_p90|
-|:----------------|---------:|-----:|-----:|
-|t_mil_pred       | 0.9791943| 20431| 14603|
-|t_loc_pred       | 0.9914633| 19194| 13667|
-|t_san_pred       | 0.9768209|  8898|  5504|
-|a_rus_pred       | 0.9713287|  5995|  4870|
-|a_ukr_pred       | 0.9803752|  2636|  2578|
-|a_other_pred     | 0.5347283|    42|    38|
-|t_aad_pred       | 0.4746550|   178|   142|
-|t_airstrike_pred | 0.8257969|   632|   631|
-|t_armor_pred     | 0.9781977|   452|   373|
-|t_arrest_pred    | 0.9798427|  1002|   723|
-|t_artillery_pred | 0.9852695|  3713|  3444|
-|t_control_pred   | 0.9688125|   990|   191|
-|t_killing_pred   | 0.6197749|    79|     0|
-|t_firefight_pred | 0.9381885|   483|   292|
-|t_ied_pred       | 0.8210011|   630|   510|
-|t_property_pred  | 0.7724413|  1039|  1038|
-|t_raid_pred      | 0.8788877|   482|   451|
-|t_occupy_pred    | 0.9159420|    35|    35|
-|t_milcas_pred    | 0.9102256|   840|   817|
-|t_civcas_pred    | 0.9802383|  1912|  1851|
+|variable         |       auc| n_p10| n_p90| cutoff_01|
+|:----------------|---------:|-----:|-----:|---------:|
+|a_other_pred     | 0.8606602|  1186|  1101| 0.5975234|
+|a_rus_pred       | 0.9712050|  6479|  5417| 0.9809810|
+|a_ukr_pred       | 0.9465969|  2677|  2574| 0.0020026|
+|t_aad_pred       | 0.5879932|   178|   142| 0.0200200|
+|t_airstrike_pred | 0.9757615|   897|   861| 0.0350352|
+|t_armor_pred     | 0.9550327|   613|   557| 0.0050054|
+|t_arrest_pred    | 0.9798427|  1821|  1640| 0.9979980|
+|t_artillery_pred | 0.9793404|  3913|  3600| 0.9989990|
+|t_civcas_pred    | 0.9723931|  2548|  2509| 0.0010010|
+|t_control_pred   | 0.9963159|  3996|   190| 0.2252259|
+|t_firefight_pred | 0.9682482|   492|   301| 0.0340340|
+|t_ied_pred       | 0.9883552|   725|   703| 0.0420420|
+|t_killing_pred   | 0.6085840|    79|     0| 0.0070847|
+|t_loc_pred       | 0.9767785| 20788| 16752| 0.9879876|
+|t_mil_pred       | 0.9813421| 21244| 13143| 0.2672714|
+|t_milcas_pred    | 0.9332470|   599|   591| 0.0010010|
+|t_occupy_pred    | 0.6893720|   233|    33| 0.6696347|
+|t_property_pred  | 0.9294396|   922|   833| 0.9989988|
+|t_raid_pred      | 0.8742246|   482|   451| 0.0140140|
+|t_san_pred       | 0.9726271|  9044|  5537| 0.9979807|
 
+This table is updated daily and is available in csv format here: 
+
+- [auc_latest.csv](https://github.com/zhukovyuri/VIINA/tree/master/Diagnostics/auc_latest.csv)
+
+Note that these statistics are subject to change, as new events are added to the corpus and as the training set expands.
 
 Below are illustrative word clouds for several categories of events. The font size is proportional to word frequencies in news wire headlines predicted as being most likely to belong to each topic category (99th percentile of predicted probability). The clouds are for out-of-sample predictions on the full set of news stories in the corpus. 
 
