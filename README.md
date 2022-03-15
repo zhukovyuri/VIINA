@@ -28,9 +28,11 @@ zhukov-at-umich-dot-edu. [sites.lsa.umich.edu/zhukov](http://sites.lsa.umich.edu
 
 ## Interactive Map
 
-To select and read individual event reports by location and time, please take a look at the dashboard developed by Robert McGrath and Eric McGlinchey at the Schar School of Policy and Government:
+To select and read individual event reports by location and time, please take a look at the dashboard developed by Robert McGrath and Eric McGlinchey at the Schar School of Policy and Government at George Mason University:
 
 - [go.gmu.edu/ukraine](https://go.gmu.edu/ukraine)
+
+![Dashboard](Figures/Screenshots/dashboard_1.png)
 
 Many thanks to Rob and Eric for getting this dashboard up and running!
 
