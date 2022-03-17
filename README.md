@@ -20,8 +20,8 @@ The most recent versions these data are available as a comma-delimited-text (csv
 
 Previous versions are available here:
 
-- [Data//PreviousVersions/events_[YYYYMMDDHHMMSS].csv](https://github.com/zhukovyuri/VIINA/tree/master/Data/PreviousVersions)
-- [Data//PreviousVersions/control_[YYYYMMDDHHMMSS].csv](https://github.com/zhukovyuri/VIINA/tree/master/Data/PreviousVersions)
+- [Data/PreviousVersions/events_[YYYYMMDDHHMMSS].csv](https://github.com/zhukovyuri/VIINA/tree/master/Data/PreviousVersions)
+- [Data/PreviousVersions/control_[YYYYMMDDHHMMSS].csv](https://github.com/zhukovyuri/VIINA/tree/master/Data/PreviousVersions)
 
 where "YYYYMMDDHHMMSS" is a time stamp (e.g. 202202240001 is "00:01, February 24, 2022").
 
