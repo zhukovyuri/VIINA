@@ -3,15 +3,20 @@
 
 ![All events](Figures/Maps/map_anim_latest.gif)
 
+![Control](Figures/Maps/ctr_anim_latest.gif)
+
 VIINA/ВІЙНА/ВОЙНА/WAR is a near-real time multi-source event data system for the 2022 Russian Invasion of Ukraine. These data are based on news reports from Ukrainian and Russian media, which were geocoded and classified into standard conflict event categories through machine learning. 
 
 These data are GIS-ready, with temporal precision down to the minute. Each observation is accompanied by full source information, text and URLs.
 
+In addition to raw events, VIINA also includes data on territorial control, at the level of individual populated places.
+
 VIINA will be updated regularly, and is freely available for use by students, journalists, policymakers, and everyday researchers. 
 
-The most recent version of the data is available as a comma-delimited-text (csv) file here:
+The most recent versions of the data are available as a comma-delimited-text (csv) files here:
 
 - [Data/events_[YYYYMMDDHHMMSS].csv](https://github.com/zhukovyuri/VIINA/tree/master/Data)
+- [Data/control_[YYYYMMDDHHMMSS].csv](https://github.com/zhukovyuri/VIINA/tree/master/Data)
 
 where "YYYYMMDDHHMMSS" is a time stamp (e.g. 202202240001 is "00:01, February 24, 2022").
 
@@ -62,7 +67,6 @@ To be added soon:
 This set of sources may expand/change as the war unfolds -- due to interruptions to journalistic activity from military operations, cyber attacks, and state censorship, as well as the availability of new data from other information providers.
 
 Using an automated web scraping routine (which runs every 6 hours), VIINA extracts the text of news reports published by each source and their associated metadata (publication time and date, web urls). Using natural language processing, the system extracts and geocodes location names mentioned in each news item. A recurrent neural network then classifies each event report into several pre-defined categories.
-
 
 
 ## Geocoding
@@ -297,8 +301,27 @@ A quick guide to what some the words mean:
 - a_[actor]: Predicted probability that report describes event initiated by each actor (from LSTM model, see above)
 
 
-## Coming soon
-
-Territorial control, at the level of individual populated places:
+## Territorial control
 
 ![All events](Figures/Maps/map_ctr_latest.png)
+
+VIINA data on territorial control are built on a manually curated subset of the above event reports, indicating whether each district administrative center (райцентр) or other major city is presently under the control of Ukrainian forces, Russian forces, or is being actively contested between the two. Control status for all other (smaller) populated places is interpolated using the status of the geographically nearest administrative center.
+
+The full set of Ukrainian populated places (N = 33,156) includes all locations in the [GeoNames gazetteer](https://www.geonames.org/) with feature_code's beginning in PPL\*.
+
+Each territorial control dataset includes the following fields:
+
+- geonameid: Numeric ID of populated place
+- name: Name of populated place
+- asciiname: Name of populated place, ASCII values
+- alternatenames: Alternative spellings of place name
+- longitude: Longitude coordinate of populated place
+- latitude: Latitude coordinate of populated place          
+- feature_code: Type of populated place (see [full list here](https://www.geonames.org/export/codes.html))
+- ctr_[YYYYMMDDHHMMSS]: Control status, with timestamp (UA/RU/CONTESTED)
+
+Note that the timestamp reflects the time at which the relevant data were collected (typically every six hours or so), which naturally lags behind the reality on the ground.
+
+Territorial control data are presently missing for the following dates: 2022/02/24-2022/02/26, 2022/03/06-2022/03/07. Data for these dates will be retroactively added in future updates.
+
+
