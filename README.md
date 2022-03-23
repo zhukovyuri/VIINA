@@ -107,6 +107,7 @@ The data currently include the following event categories:
 - t_san: Event report mentions economic sanctions imposed on Russia
 - a_rus: Event initiated by Russian or Russian-aligned armed forces
 - a_ukr: Event initiated by Ukrainian or Ukrainian-aligned armed forces
+- a_civ: Event initiated by civilians
 - a_other: Event initiated by a third party (e.g. U.S., EU, Red Cross)
 - t_aad: Anti-air defense, Buk, shoulder-fired missiles (Igla, Strela, Stinger)
 - t_airstrike: Air strike, strategic bombing, helicopter strike
@@ -117,6 +118,8 @@ The data currently include the following event categories:
 - t_firefight: Any exchange of gunfire with handguns, semi-automatic rifles, automatic rifles, machine guns, rocket-propelled grenades (RPGs)
 - t_ied: Improvised explosive device, roadside bomb, landmine, car bomb, explosion 
 - t_raid: Assault/attack by paratroopers or special forces, usually followed by a retreat
+- t_occupy: Occupation of territory or building
+- t_property: Destruction of property or infrastructure
 - t_milcas: Event report mentions military casualties
 - t_civcas: Event report mentions civilian casualties
 
@@ -133,26 +136,27 @@ Below are in-sample prediction accuracy statistics for each variable (auc: area 
 
 |variable         |       auc| n_p10| n_p90| cutoff_01|
 |:----------------|---------:|-----:|-----:|---------:|
-|a_other_pred     | 0.9013726|  1765|   912| 0.9466450|
-|a_rus_pred       | 0.9669519|  9700|  7415| 0.9899900|
-|a_ukr_pred       | 0.7332131| 36839|  1868| 0.9659468|
-|t_aad_pred       | 0.5854273|   189|   150| 0.0090090|
-|t_airstrike_pred | 0.8462082|   781|   767| 0.0350350|
-|t_armor_pred     | 0.9207395|   414|   337| 0.0010011|
-|t_arrest_pred    | 0.9798017|  1393|  1337| 0.0010010|
-|t_artillery_pred | 0.9834282|  5853|  5181| 0.9989990|
-|t_civcas_pred    | 0.7465491|  1277|  1227| 0.0440439|
-|t_control_pred   | 0.9971734|  7953|   282| 0.2442426|
-|t_firefight_pred | 0.9612475|   598|   404| 0.0340321|
-|t_ied_pred       | 0.7751092|   599|   524| 0.0420420|
-|t_killing_pred   | 0.5535514|   145|     4| 0.0070846|
-|t_loc_pred       | 0.9586553| 18188| 17061| 0.0040128|
-|t_mil_pred       | 0.9686595| 40865| 25302| 0.4574614|
-|t_milcas_pred    | 0.9237426|  1289|  1281| 0.0010010|
-|t_occupy_pred    | 0.9152174|   275|   261| 0.0080080|
-|t_property_pred  | 0.9239919|   711|   706| 0.0490490|
-|t_raid_pred      | 0.9538824|   712|   620| 0.0140140|
-|t_san_pred       | 0.5523166|  2958|  2555| 0.9979966|
+|a_civ_pred       | 0.9962323|   293|   283| 0.0010009|
+|a_other_pred     | 0.9496744|  4971|  1784| 0.5135131|
+|a_rus_pred       | 0.9792694|  8533|  6776| 0.5155160|
+|a_ukr_pred       | 0.9865879|  3251|  3134| 0.0870871|
+|t_aad_pred       | 0.9317942|   580|   580| 0.0010010|
+|t_airstrike_pred | 0.9741528|  1877|  1863| 0.0010010|
+|t_armor_pred     | 0.9701414|   343|   265| 0.3143143|
+|t_arrest_pred    | 0.9597195|   745|   718| 0.9939940|
+|t_artillery_pred | 0.9923325|  3610|  3610| 0.0010011|
+|t_civcas_pred    | 0.9402295|  3942|  3941| 0.0010010|
+|t_control_pred   | 0.9190448|   765|   131| 0.3033014|
+|t_firefight_pred | 0.9453216|   730|   704| 0.8528529|
+|t_ied_pred       | 0.9711012|   439|   435| 0.0010010|
+|t_killing_pred   | 0.9540383|  1456|    37| 0.8513455|
+|t_loc_pred       | 0.9882307| 24382| 20177| 0.9539534|
+|t_mil_pred       | 0.9933937| 27691| 20123| 0.9979980|
+|t_milcas_pred    | 0.8604264|   615|   567| 0.0010012|
+|t_occupy_pred    | 0.8325708|    98|    98| 0.0010014|
+|t_property_pred  | 0.9358663|  1887|  1657| 0.9699700|
+|t_raid_pred      | 0.9511256|   977|   959| 0.0010010|
+|t_san_pred       | 0.8876493| 14336| 14336| 0.0032500|
 
 
 This table is updated daily and is available in csv format here: 
