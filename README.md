@@ -136,27 +136,27 @@ Below are in-sample prediction accuracy statistics for each variable (auc: area 
 
 |variable         |       auc| n_p10| n_p90| cutoff_01|
 |:----------------|---------:|-----:|-----:|---------:|
-|a_rus_pred       | 0.9798331| 18462| 15479| 0.8658659|
-|a_ukr_pred       | 0.9412796| 16263|  7587| 0.9989990|
-|a_civ_pred       | 0.7496665|   216|   170| 0.0120102|
-|a_other_pred     | 0.9820295|  7467|  4531| 0.9959952|
-|t_aad_pred       | 0.8095530|   324|   315| 0.0510508|
-|t_airstrike_pred | 0.8999982|  2352|  2164| 0.9969970|
-|t_armor_pred     | 0.8900359|   835|   561| 0.9589590|
-|t_arrest_pred    | 0.9202917|  1064|  1038| 0.0020020|
-|t_artillery_pred | 0.9836843|  8293|  8110| 0.8938939|
-|t_civcas_pred    | 0.7574280|  2790|  2737| 0.1021021|
-|t_control_pred   | 0.9051321|  5115|   500| 0.1291287|
-|t_firefight_pred | 0.8191773|   734|   696| 0.0120120|
-|t_ied_pred       | 0.9168973|   443|   363| 0.1091091|
-|t_killing_pred   | 0.9840681|  1648|   992| 0.8514195|
-|t_loc_pred       | 0.9599638| 34426| 28616| 0.2342345|
-|t_mil_pred       | 0.9826066| 46532| 34076| 0.9759760|
-|t_milcas_pred    | 0.8305779|  1576|  1090| 0.9799800|
-|t_occupy_pred    | 0.9198622|   113|    95| 0.0820705|
-|t_property_pred  | 0.7956919|  3171|  2686| 0.9699700|
-|t_raid_pred      | 0.9749121|   730|   697| 0.0110110|
-|t_san_pred       | 0.9492860| 11719| 11495| 0.9391491|
+|a_rus_pred       | 0.9678071| 12401| 10199| 0.7327323|
+|a_ukr_pred       | 0.9308883| 14680|  9050| 0.9979980|
+|a_civ_pred       | 0.8691982|  1246|   858| 0.9948464|
+|a_other_pred     | 0.9643959|  5855|  5011| 0.1111110|
+|t_aad_pred       | 0.8728496|  1430|  1414| 0.0380378|
+|t_airstrike_pred | 0.8355190|  1540|  1530| 0.9969970|
+|t_armor_pred     | 0.9031462|   917|   844| 0.3143143|
+|t_arrest_pred    | 0.8884818|  2358|  2336| 0.0020020|
+|t_artillery_pred | 0.9415752|  6212|  5934| 0.0010010|
+|t_civcas_pred    | 0.9622753|  4384|  4331| 0.1021021|
+|t_control_pred   | 0.9153547|  2660|   894| 0.9969906|
+|t_firefight_pred | 0.8070276|   734|   696| 0.0140140|
+|t_ied_pred       | 0.8419152|   443|   363| 0.1091091|
+|t_killing_pred   | 0.5548070|   721|    65| 0.8512725|
+|t_loc_pred       | 0.9738428| 28794| 27317| 0.2342343|
+|t_mil_pred       | 0.9791154| 43197| 33155| 0.9829830|
+|t_milcas_pred    | 0.9331487|  3250|  3113| 0.9879880|
+|t_occupy_pred    | 0.6518058|   113|    95| 0.0100086|
+|t_property_pred  | 0.7652306|  3532|  2587| 0.9869870|
+|t_raid_pred      | 0.7955577|   627|   594| 0.0110110|
+|t_san_pred       | 0.9858938| 17156| 16273| 0.9949950|
 
 
 This table is updated daily and is available in csv format here: 
@@ -167,7 +167,7 @@ Note that these statistics are subject to change, as new events are added to the
 
 Below are illustrative word clouds for several categories of events. The font size is proportional to word frequencies in news wire headlines predicted as being most likely to belong to each topic category (99th percentile of predicted probability). The clouds are for out-of-sample predictions on the full set of news stories in the corpus. 
 
-### Events about war/military operations (t_mil_pred)
+### Events about war/military operations (t_mil_*)
 
 ![wc_t_mil_test](Figures/WC/wc_t_mil_test.png)
 
@@ -177,7 +177,7 @@ A quick guide to what some the words mean:
 - "зсу" (zsu) is the acronym for Armed Forces of Ukraine (in Ukrainian)
 
 
-### Russian-initiated events (a_rus_pred)
+### Russian-initiated events (a_rus_*)
 
 ![wc_t_mil_test](Figures/WC/wc_a_rus_test.png)
 
@@ -186,7 +186,7 @@ A quick guide to what some the words mean:
 - "війска" (viyska) means "forces"
 
 
-### Ukrainian-initiated events (a_ukr_pred)
+### Ukrainian-initiated events (a_ukr_*)
 
 ![wc_t_mil_test](Figures/WC/wc_a_ukr_test.png)
 
@@ -195,7 +195,7 @@ A quick guide to what some the words mean:
 - "заявили днр" (zayavili dnr) means "DNR has claimed" (in Russian)
 
 
-### Sanctions (t_san_pred)
+### Sanctions (t_san_*)
 
 ![wc_t_mil_test](Figures/WC/wc_t_san_test.png)
 
@@ -204,7 +204,7 @@ A quick guide to what some the words mean:
 - there are also terms here for sanctions related to SWIFT, Visa, MasterCard
 
 
-### Anti-air defense (t_aad_pred)
+### Anti-air defense (t_aad_*)
 
 ![wc_t_mil_test](Figures/WC/wc_t_aad_test.png)
 
@@ -212,14 +212,14 @@ A quick guide to what some the words mean:
 - "літак" (litak) means "aircraft"
 
 
-### Air strikes (t_airstrike_pred)
+### Air strikes (t_airstrike_*)
 
 ![wc_t_mil_test](Figures/WC/wc_t_airstrike_test.png)
 
 - "повітряна тривога" (povitryana tryvoha) means "air raid alert"
 
 
-### Arrests or detentions of POWs (t_arrest_pred)
+### Arrests or detentions of POWs (t_arrest_*)
 
 ![wc_t_mil_test](Figures/WC/wc_t_arrest_test.png)
 
@@ -227,7 +227,7 @@ A quick guide to what some the words mean:
 - "взяли в полон" (vzyaly v polon) means "taken prisoner"
 
 
-### Tank battles (t_armor_pred)
+### Tank battles (t_armor_*)
 
 ![wc_t_mil_test](Figures/WC/wc_t_armor_test.png)
 
@@ -235,7 +235,7 @@ A quick guide to what some the words mean:
 - "окупантів" (okupantiv) means "of occupiers"
 
 
-### Territorial control (t_control_pred)
+### Territorial control (t_control_*)
 
 ![wc_t_mil_test](Figures/WC/wc_t_control_test.png)
 
@@ -244,7 +244,7 @@ A quick guide to what some the words mean:
 - "контролем" (kontrolem) means "[under] control"
 
 
-### Firefights (t_firefight_pred)
+### Firefights (t_firefight_*)
 
 ![wc_t_mil_test](Figures/WC/wc_t_firefight_test.png)
 
@@ -252,7 +252,7 @@ A quick guide to what some the words mean:
 - "бои" (boi) means "fighting" (in Russian)
 
 
-### Artillery shelling and rocket strikes (t_artillery_pred)
+### Artillery shelling and rocket strikes (t_artillery_*)
 
 ![wc_t_mil_test](Figures/WC/wc_t_artillery_test.png)
 
@@ -261,7 +261,7 @@ A quick guide to what some the words mean:
 - "заявили днр" (zayavili dnr) means "DNR has claimed" (i.e. allegations of shelling by UA forces in Donbas)
 
 
-### Raid (t_raid_pred)
+### Raid (t_raid_*)
 
 ![wc_t_mil_test](Figures/WC/wc_t_raid_test.png)
 
@@ -270,7 +270,15 @@ A quick guide to what some the words mean:
 - "висадився десант" (vysadyvsya desant) means "paratroopers landed"
 
 
-### Military casualties (t_milcas_pred)
+### Destruction of property or infrastructure (t_property_*)
+
+![wc_t_mil_test](Figures/WC/wc_t_property_test.png)
+
+- "будинків" (budynkiv) means "houses"
+- "з під завалів" (z pid zavaliv) means "from under the rubble"
+
+
+### Military casualties (t_milcas_*)
 
 ![wc_t_mil_test](Figures/WC/wc_t_milcas_test.png)
 
@@ -280,7 +288,7 @@ A quick guide to what some the words mean:
 - "загинули" (zahynuly) means "died"
 
 
-### Civilian casualties (t_civcas_pred)
+### Civilian casualties (t_civcas_*)
 
 ![wc_t_mil_test](Figures/WC/wc_t_civcas_test.png)
 
