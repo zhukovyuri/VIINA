@@ -120,6 +120,8 @@ The data currently include the following event categories:
 - t_raid: Assault/attack by paratroopers or special forces, usually followed by a retreat
 - t_occupy: Occupation of territory or building
 - t_property: Destruction of property or infrastructure
+- t_cyber: Cyber operations, including DDOS attacks, website defacement
+- t_hospitals: Attacks on hospitals and humanitarian convoys
 - t_milcas: Event report mentions military casualties
 - t_civcas: Event report mentions civilian casualties
 
@@ -136,29 +138,29 @@ Below are in-sample prediction accuracy statistics for each variable (auc: area 
 
 |variable         |       auc| n_p10| n_p90| cutoff_01|
 |:----------------|---------:|-----:|-----:|---------:|
-|a_rus_pred       | 0.9692857| 15001| 13676| 0.5065065|
-|a_ukr_pred       | 0.9836828| 15973|  7359| 0.2522523|
-|a_civ_pred       | 0.8747193|   578|   493| 0.1401200|
-|a_other_pred     | 0.9528782|  7169|  4289| 0.8978972|
-|t_aad_pred       | 0.7817324|   443|   434| 0.0380380|
-|t_airstrike_pred | 0.7899047|  1638|  1616| 0.9969970|
-|t_armor_pred     | 0.9280477|   730|   560| 0.9729730|
-|t_arrest_pred    | 0.9366180|  1380|  1288| 0.0020020|
-|t_artillery_pred | 0.9793961|  6880|  6696| 0.0010010|
-|t_civcas_pred    | 0.9584667|  4970|  4899| 0.1021021|
-|t_control_pred   | 0.8923292|  1668|  1000| 0.9989926|
-|t_cyber_pred     | 0.9816706|  2671|  2284| 0.9989774|
-|t_firefight_pred | 0.8528775|   756|   717| 0.0290290|
-|t_hospital_pred  | 0.9429820|   753|   720| 0.0010010|
-|t_ied_pred       | 0.8475088|   479|   375| 0.1091091|
-|t_killing_pred   | 0.5288438|   749|    93| 0.8512725|
-|t_loc_pred       | 0.9700380| 33660| 30018| 0.9499500|
-|t_mil_pred       | 0.9868603| 49609| 38681| 0.4104108|
-|t_milcas_pred    | 0.9399767|  2887|  2579| 0.9419419|
-|t_occupy_pred    | 0.8906065|   433|   382| 0.9989990|
-|t_property_pred  | 0.7653811|  3246|  2818| 0.9699700|
-|t_raid_pred      | 0.9035011|   845|   750| 0.4874875|
-|t_san_pred       | 0.9595164| 13742| 13156| 0.9949950|
+|a_rus_pred       | 0.9397199| 15937| 14466| 0.9989984|
+|a_ukr_pred       | 0.9525329|  6915|  5777| 0.1021021|
+|a_civ_pred       | 0.9596435|   609|   559| 0.0120120|
+|a_other_pred     | 0.9492750|  5414|  4297| 0.5605601|
+|t_aad_pred       | 0.5087689|   343|   334| 0.0380378|
+|t_airstrike_pred | 0.8889143|  2027|  1993| 0.9969970|
+|t_armor_pred     | 0.9097557|  1009|   494| 0.3143143|
+|t_arrest_pred    | 0.8880006|  3612|  3248| 0.9989990|
+|t_artillery_pred | 0.9422790|  6492|  6181| 0.0070070|
+|t_civcas_pred    | 0.6662468|  3044|  2981| 0.1021021|
+|t_control_pred   | 0.9812040|  5425|   396| 0.1101101|
+|t_cyber_pred     | 0.9561387|  2552|  2449| 0.9989990|
+|t_firefight_pred | 0.9122646|  1058|   974| 0.0140140|
+|t_hospital_pred  | 0.9474360|  1218|  1123| 0.9979978|
+|t_ied_pred       | 0.9453806|   752|   646| 0.1091091|
+|t_killing_pred   | 0.4991573|   749|    93| 0.8512725|
+|t_loc_pred       | 0.9849791| 35572| 32629| 0.9799800|
+|t_mil_pred       | 0.9855676| 59068| 40230| 0.2162167|
+|t_milcas_pred    | 0.9372883|  1245|  1184| 0.9419419|
+|t_occupy_pred    | 0.9149371|   829|   745| 0.0100100|
+|t_property_pred  | 0.7889393|  3035|  2529| 0.9699700|
+|t_raid_pred      | 0.7940503|   661|   620| 0.0110110|
+|t_san_pred       | 0.9814234|  9660|  9052| 0.9389389|
 
 
 This table is updated daily and is available in csv format here: 
@@ -278,6 +280,23 @@ A quick guide to what some the words mean:
 
 - "будинків" (budynkiv) means "houses"
 - "з під завалів" (z pid zavaliv) means "from under the rubble"
+
+
+### Cyber operations (t_cyber_*)
+
+![wc_t_mil_test](Figures/WC/wc_t_cyber_test.png)
+
+- "хакери" (khakery) means "hackers"
+- "зламали сайт" (zlamaly sayt) means "hacked the website"
+
+
+### Attacks on hospitals (t_hospital_*)
+
+![wc_t_mil_test](Figures/WC/wc_t_hospital_test.png)
+
+- "лікарні" (likarni) means "hospitals"
+- "гуманітарні коридори" (humanitarni korydory) means "humanitarian corridors"
+- "працюють" (pratsuyut') means "are working"
 
 
 ### Military casualties (t_milcas_*)
