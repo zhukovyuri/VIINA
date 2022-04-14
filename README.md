@@ -138,29 +138,29 @@ Below are in-sample prediction accuracy statistics for each variable (auc: area 
 
 |variable         |       auc| n_p10| n_p90| cutoff_01|
 |:----------------|---------:|-----:|-----:|---------:|
-|a_rus_pred       | 0.9397199| 15937| 14466| 0.9989984|
-|a_ukr_pred       | 0.9525329|  6915|  5777| 0.1021021|
-|a_civ_pred       | 0.9596435|   609|   559| 0.0120120|
-|a_other_pred     | 0.9492750|  5414|  4297| 0.5605601|
-|t_aad_pred       | 0.5087689|   343|   334| 0.0380378|
-|t_airstrike_pred | 0.8889143|  2027|  1993| 0.9969970|
-|t_armor_pred     | 0.9097557|  1009|   494| 0.3143143|
-|t_arrest_pred    | 0.8880006|  3612|  3248| 0.9989990|
-|t_artillery_pred | 0.9422790|  6492|  6181| 0.0070070|
-|t_civcas_pred    | 0.6662468|  3044|  2981| 0.1021021|
-|t_control_pred   | 0.9812040|  5425|   396| 0.1101101|
-|t_cyber_pred     | 0.9561387|  2552|  2449| 0.9989990|
-|t_firefight_pred | 0.9122646|  1058|   974| 0.0140140|
-|t_hospital_pred  | 0.9474360|  1218|  1123| 0.9979978|
-|t_ied_pred       | 0.9453806|   752|   646| 0.1091091|
-|t_killing_pred   | 0.4991573|   749|    93| 0.8512725|
-|t_loc_pred       | 0.9849791| 35572| 32629| 0.9799800|
-|t_mil_pred       | 0.9855676| 59068| 40230| 0.2162167|
-|t_milcas_pred    | 0.9372883|  1245|  1184| 0.9419419|
-|t_occupy_pred    | 0.9149371|   829|   745| 0.0100100|
-|t_property_pred  | 0.7889393|  3035|  2529| 0.9699700|
-|t_raid_pred      | 0.7940503|   661|   620| 0.0110110|
-|t_san_pred       | 0.9814234|  9660|  9052| 0.9389389|
+|a_rus_pred       | 0.9654805| 13547| 10958| 0.9989986|
+|a_ukr_pred       | 0.9790863| 15217|  8141| 0.9899900|
+|a_civ_pred       | 0.9526951|  9297|   177| 0.3082623|
+|a_other_pred     | 0.9555902|  5332|  4822| 0.4984981|
+|t_aad_pred       | 0.9680766|  1527|  1517| 0.0380380|
+|t_airstrike_pred | 0.9000190|  2662|  2620| 0.9969970|
+|t_armor_pred     | 0.9027617|   935|   861| 0.3143143|
+|t_arrest_pred    | 0.8851692|  2473|  2233| 0.0020020|
+|t_artillery_pred | 0.9825025|  6815|  6678| 0.0010010|
+|t_civcas_pred    | 0.9635935|  4104|  4003| 0.1021021|
+|t_control_pred   | 0.9520249| 15111|   730| 0.2702702|
+|t_cyber_pred     | 0.9616443|  4853|  4717| 0.9989990|
+|t_firefight_pred | 0.8045639|   764|   723| 0.0150150|
+|t_hospital_pred  | 0.9440955|   537|   501| 0.0010010|
+|t_ied_pred       | 0.9315872|   987|   883| 0.1091091|
+|t_killing_pred   | 0.4966533|   749|    93| 0.8512725|
+|t_loc_pred       | 0.9421611| 41178| 39936| 0.9209209|
+|t_mil_pred       | 0.9815032| 60329| 42744| 0.5575579|
+|t_milcas_pred    | 0.9370085|  3654|  3469| 0.9959960|
+|t_occupy_pred    | 0.6511453|   136|   114| 0.0100086|
+|t_property_pred  | 0.7840882|  4093|  3654| 0.9699700|
+|t_raid_pred      | 0.8075744|   661|   620| 0.0130130|
+|t_san_pred       | 0.9706459| 12483| 11928| 0.9389389|
 
 
 This table is updated daily and is available in csv format here: 
@@ -296,7 +296,7 @@ A quick guide to what some the words mean:
 
 - "лікарні" (likarni) means "hospitals"
 - "гуманітарні коридори" (humanitarni korydory) means "humanitarian corridors"
-- "працюють" (pratsuyut') means "are working"
+- "працюють" (pratsyuyut') means "are working"
 
 
 ### Military casualties (t_milcas_*)
