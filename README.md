@@ -138,29 +138,29 @@ Below are in-sample prediction accuracy statistics for each variable (auc: area 
 
 |variable         |       auc| n_p10| n_p90| cutoff_01|
 |:----------------|---------:|-----:|-----:|---------:|
-|a_rus_pred       | 0.9059072| 22514| 18448| 0.5565562|
-|a_ukr_pred       | 0.9816315| 24559| 11638| 0.3783784|
-|a_civ_pred       | 0.7103804|   281|   213| 0.0120102|
-|a_other_pred     | 0.9615422| 11414|  7700| 0.9579572|
-|t_aad_pred       | 0.9680002|  1317|  1269| 0.0380380|
-|t_airstrike_pred | 0.8010883|  2144|  2018| 0.9969970|
-|t_armor_pred     | 0.8998725|  2071|  1046| 0.8588589|
-|t_arrest_pred    | 0.8898853|  3707|  2710| 0.5735736|
-|t_artillery_pred | 0.9828922| 11747| 11388| 0.8018018|
-|t_civcas_pred    | 0.8940404|  7847|  7073| 0.9749745|
-|t_control_pred   | 0.8927462|  3223|   836| 0.1101101|
-|t_cyber_pred     | 0.9630943|  2362|  2196| 0.9549550|
-|t_firefight_pred | 0.8045639|   990|   928| 0.0140140|
-|t_hospital_pred  | 0.9689356|   631|   597| 0.0010010|
-|t_ied_pred       | 0.9512647|  1228|   861| 0.9899900|
-|t_killing_pred   | 0.9567342|  3073|   253| 0.8512725|
-|t_loc_pred       | 0.9696627| 56150| 51115| 0.9989990|
-|t_mil_pred       | 0.9702618| 76300| 56538| 0.2162167|
-|t_milcas_pred    | 0.9426729|  4400|  3853| 0.9419419|
-|t_occupy_pred    | 0.6511722|   254|   219| 0.0100086|
-|t_property_pred  | 0.7577143|  5266|  3704| 0.9699700|
-|t_raid_pred      | 0.9034096|  1298|   956| 0.6906907|
-|t_san_pred       | 0.9613776| 20030| 19262| 0.9389389|
+|a_rus_pred       | 0.9763358| 26071| 21216| 0.8808809|
+|a_ukr_pred       | 0.9821838| 14165| 12512| 0.9919920|
+|a_civ_pred       | 0.8747894|  1008|   213| 0.7035986|
+|a_other_pred     | 0.9712087|  8101|  6031| 0.9739732|
+|t_aad_pred       | 0.8078481|  2063|  1744| 0.0380380|
+|t_airstrike_pred | 0.8996635|  3764|  3530| 0.9969970|
+|t_armor_pred     | 0.6904714|   373|   263| 0.3143143|
+|t_arrest_pred    | 0.9363053|  3141|  2800| 0.0020020|
+|t_artillery_pred | 0.9849461| 13324| 12769| 0.7337337|
+|t_civcas_pred    | 0.9563626|  6258|  5978| 0.1021021|
+|t_control_pred   | 0.9154395| 10576|   841| 0.4304296|
+|t_cyber_pred     | 0.9843394|  4423|  3887| 0.9989990|
+|t_firefight_pred | 0.9162675|  1937|  1846| 0.0140140|
+|t_hospital_pred  | 0.9478929|  1084|  1041| 0.0010010|
+|t_ied_pred       | 0.9537292|   672|   532| 0.1091091|
+|t_killing_pred   | 0.4915732|   970|   253| 0.8512725|
+|t_loc_pred       | 0.9679706| 55074| 46733| 0.4374375|
+|t_mil_pred       | 0.9844221| 83346| 63727| 0.7897899|
+|t_milcas_pred    | 0.8420901|  8696|  1212| 0.9419419|
+|t_occupy_pred    | 0.6676793|   254|   219| 0.0100086|
+|t_property_pred  | 0.8951006|  7413|  4210| 0.9859860|
+|t_raid_pred      | 0.9758810|  1417|  1329| 0.0110110|
+|t_san_pred       | 0.9821205| 16542| 14471| 0.9979951|
 
 This table is updated daily and is available in csv format here: 
 
@@ -360,6 +360,6 @@ Each territorial control dataset includes the following fields:
 
 Note that the timestamp reflects the time at which the relevant data were collected (typically every six hours or so), which naturally lags behind the reality on the ground.
 
-Territorial control data are presently missing for the following dates: 2022/02/24-2022/02/26, 2022/03/06-2022/03/07. Data for these dates will be retroactively added in future updates.
+Territorial control data are presently missing for the following dates: 2022/02/24-2022/02/26, 2022/03/06-2022/03/07, 2022/05/16-2022/05/18. Data for these dates will be retroactively added in future updates.
 
 
