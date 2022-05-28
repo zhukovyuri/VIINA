@@ -56,6 +56,7 @@ Many thanks to Rob and Eric for getting this dashboard up and running!
 - [Інтерфакс-Україна](https://interfax.com.ua/) ("interfaxua"): Ukrainian affiliate of Russia's Interfax news wire service
 - [Комсомольская Правда](https://www.kp.ru/) ("kp"): Russian newspaper
 - [ЛІГА.net](https://www.liga.net/) ("liga"): Ukrainian internet news service       
+- [Live Universal Awareness Map](https://liveuamap.com/) ("liveuamap"): Ukrainian conflict event mapping service       
 - [Мілітарний](https://mil.in.ua/uk/) ("militarnyy"): Ukrainian defense news portal
 - [Медиазона](https://zona.media/) ("mz"): Russian news portal
 - [НВ](https://nv.ua/ukr?utm_content=set_lang) ("nv"): Ukrainian magazine and internet news portal
@@ -136,31 +137,31 @@ Cutoffs for dichotomizing the predicted probabilities were selected by minimizin
 
 Below are in-sample prediction accuracy statistics for each variable (auc: area under the ROC curve, fitted values against training set labels), along with the number of events with probabilities greater than .10 (n_p10) and greater than .90 (n_p90). Also included are recommended cutoffs for dichotomizing each variable (cutoff_01).
 
-|variable         |       auc| n_p10| n_p90| cutoff_01|
-|:----------------|---------:|-----:|-----:|---------:|
-|a_rus_pred       | 0.9734887| 30300| 25425| 0.9989984|
-|a_ukr_pred       | 0.9329158| 17910| 13025| 0.1961962|
-|a_civ_pred       | 0.7335483|   287|   219| 0.0120102|
-|a_other_pred     | 0.9550093| 14341| 10370| 0.9949942|
-|t_aad_pred       | 0.9922307|  1775|  1698| 0.0800801|
-|t_airstrike_pred | 0.8892787|  3464|  3253| 0.9969970|
-|t_armor_pred     | 0.9569308|   850|   713| 0.3143143|
-|t_arrest_pred    | 0.8856542|  5355|  4494| 0.8638639|
-|t_artillery_pred | 0.9745899| 12081| 11776| 0.9809810|
-|t_civcas_pred    | 0.9599784|  8286|  7674| 0.0570571|
-|t_control_pred   | 0.9801648|  3352|  1562| 0.1541542|
-|t_cyber_pred     | 0.9545916|  4830|  4697| 0.9989990|
-|t_firefight_pred | 0.9110751|  1762|  1445| 0.9849850|
-|t_hospital_pred  | 0.8581398|   738|   671| 0.0010010|
-|t_ied_pred       | 0.8525382|   744|   604| 0.1091091|
-|t_killing_pred   | 0.5336597|  1018|   264| 0.8512725|
-|t_loc_pred       | 0.9660524| 53682| 47236| 0.9989990|
-|t_mil_pred       | 0.9359546| 60800| 56590| 0.0230232|
-|t_milcas_pred    | 0.9377064|  6450|  6136| 0.9419419|
-|t_occupy_pred    | 0.7364243|   900|   803| 0.0100100|
-|t_property_pred  | 0.9529782|  4538|  4032| 0.9699700|
-|t_raid_pred      | 0.8385770|  5024|  3156| 0.9989990|
-|t_san_pred       | 0.9884200| 25566| 22270| 0.9949551|
+|variable         |       auc|  n_p10| n_p90| cutoff_01|
+|:----------------|---------:|------:|-----:|---------:|
+|a_rus_pred       | 0.9597373|  34433| 29516| 0.9989984|
+|a_ukr_pred       | 0.9822401|  16164| 12935| 0.8478478|
+|a_civ_pred       | 0.9823646|    514|   446| 0.0120120|
+|a_other_pred     | 0.9747850|   9731|  5338| 0.1011010|
+|t_aad_pred       | 0.8336882|    634|   577| 0.0630631|
+|t_airstrike_pred | 0.8888990|   6265|  6104| 0.9969970|
+|t_armor_pred     | 0.7206444|    464|   348| 0.3143143|
+|t_arrest_pred    | 0.8790897|   5252|  4938| 0.0020020|
+|t_artillery_pred | 0.9794865|  18798| 18334| 0.0020020|
+|t_civcas_pred    | 0.9680064|   9326|  8889| 0.0570571|
+|t_control_pred   | 0.9788996|   5705|  1142| 0.3523523|
+|t_cyber_pred     | 0.9591213|   4264|  4078| 0.9989990|
+|t_firefight_pred | 0.8112772|   1198|  1087| 0.0160160|
+|t_hospital_pred  | 0.9458743|   1376|  1286| 0.0010010|
+|t_ied_pred       | 0.8524002|    744|   604| 0.1091091|
+|t_killing_pred   | 0.9345871|   2461|  1469| 0.8518519|
+|t_loc_pred       | 0.9674159|  60454| 51118| 0.9879880|
+|t_mil_pred       | 0.9724788| 103060| 69379| 0.5085086|
+|t_milcas_pred    | 0.9209991|   4621|  4389| 0.9419419|
+|t_occupy_pred    | 0.9398886|   1987|  1654| 0.0100100|
+|t_property_pred  | 0.9607679|   6439|  5947| 0.9699700|
+|t_raid_pred      | 0.7905529|   2344|  2003| 0.9989990|
+|t_san_pred       | 0.9849134|  21728| 19722| 0.9389242|
 
 This table is updated daily and is available in csv format here: 
 
