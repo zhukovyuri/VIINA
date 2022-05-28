@@ -81,7 +81,7 @@ Events were geo-located by place names mentioned in the text of each news report
 
 Geocoding precision ranges from street-level (GEO_PRECISION="STREET") to province-level (GEO_PRECISION="ADM1").
 
-Below is a map of **all** geocoded event reports since the start of Russia's military operations on February 24, 2022. Underneath the map is a timeline, showing the number of event reports published per hour, across all data sources.
+Below is a map of **all** geocoded event reports since the start of Russia's military operations on February 24, 2022. Underneath the map is a timeline, showing the number of event reports published per day, across all data sources.
 
 ![All events](Figures/Maps/map_all_latest.png "All event reports, by location")
 ![All events](Figures/Time/time_all_latest.png "All event reports, by time")
