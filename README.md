@@ -137,31 +137,31 @@ Cutoffs for dichotomizing the predicted probabilities were selected by minimizin
 
 Below are in-sample prediction accuracy statistics for each variable (auc: area under the ROC curve, fitted values against training set labels), along with the number of events with probabilities greater than .10 (n_p10) and greater than .90 (n_p90). Also included are recommended cutoffs for dichotomizing each variable (cutoff_01).
 
-|variable         |       auc|  n_p10| n_p90| cutoff_01|
-|:----------------|---------:|------:|-----:|---------:|
-|a_rus_pred       | 0.9692041|  32999| 27451| 0.9139138|
-|a_ukr_pred       | 0.9737114|  21013| 15366| 0.7927928|
-|a_civ_pred       | 0.8653675|   1087|   307| 0.9247868|
-|a_other_pred     | 0.9832977|  16744|  6318| 0.8908902|
-|t_aad_pred       | 0.9673166|   2421|  2026| 0.0380380|
-|t_airstrike_pred | 0.9811921|   8338|  8110| 0.9969970|
-|t_armor_pred     | 0.6789777|    465|   341| 0.3143143|
-|t_arrest_pred    | 0.8850780|   7118|  6881| 0.0020020|
-|t_artillery_pred | 0.9776649|  23110| 22415| 0.0030030|
-|t_civcas_pred    | 0.8923817|  11822| 11472| 0.1021021|
-|t_control_pred   | 0.9691717|   4925|  2758| 0.1101101|
-|t_cyber_pred     | 0.9732435|   2678|  2169| 0.9989933|
-|t_firefight_pred | 0.9344410|   2765|  2149| 0.9679680|
-|t_hospital_pred  | 0.9613946|   1208|  1138| 0.0010010|
-|t_ied_pred       | 0.9385892|   2838|  2542| 0.1091091|
-|t_killing_pred   | 0.5494775|   1169|   330| 0.8512725|
-|t_loc_pred       | 0.9740010|  82685| 72439| 0.2692693|
-|t_mil_pred       | 0.9761751| 127221| 94141| 0.3813815|
-|t_milcas_pred    | 0.8457642|   9158|  4235| 0.8558559|
-|t_occupy_pred    | 0.9118698|   1530|  1396| 0.0100100|
-|t_property_pred  | 0.7638221|   7786|  6397| 0.9699700|
-|t_raid_pred      | 0.8724048|   2276|  2046| 0.1211211|
-|t_san_pred       | 0.9821637|  25035| 17388| 0.9389389|
+|variable         |       auc|  n_p10|  n_p90| cutoff_01|
+|:----------------|---------:|------:|------:|---------:|
+|a_rus_pred       | 0.9677258|  32942|  27872| 0.5845842|
+|a_ukr_pred       | 0.9578333|  23394|  21411| 0.9989990|
+|a_civ_pred       | 0.8326357|   1026|    767| 0.9868396|
+|a_other_pred     | 0.9547891|   9782|   5096| 0.5075073|
+|t_aad_pred       | 0.8716383|   2835|   2676| 0.0380379|
+|t_airstrike_pred | 0.7792635|   5063|   4838| 0.9969970|
+|t_armor_pred     | 0.6789777|    465|    341| 0.3143143|
+|t_arrest_pred    | 0.8893467|   6703|   6280| 0.0020020|
+|t_artillery_pred | 0.9877490|  21489|  20189| 0.0040040|
+|t_civcas_pred    | 0.9630013|   9654|   9191| 0.3473473|
+|t_control_pred   | 0.9136162|   2939|   1834| 0.1101101|
+|t_cyber_pred     | 0.9537182|   6667|   6179| 0.9989988|
+|t_firefight_pred | 0.8073481|   1248|   1111| 0.0160160|
+|t_hospital_pred  | 0.9622599|   1511|   1421| 0.0010010|
+|t_ied_pred       | 0.9738413|   2861|   2608| 0.1091091|
+|t_killing_pred   | 0.5246210|   1169|    330| 0.8512725|
+|t_loc_pred       | 0.9695629|  80169|  74095| 0.9989990|
+|t_mil_pred       | 0.9735175| 129206| 101328| 0.5895897|
+|t_milcas_pred    | 0.9030142|   7088|   6069| 0.9809810|
+|t_occupy_pred    | 0.9150239|   2737|   2420| 0.3213213|
+|t_property_pred  | 0.7570952|   8195|   7523| 0.9699700|
+|t_raid_pred      | 0.9765742|   1701|   1556| 0.0110110|
+|t_san_pred       | 0.9870702|  36838|  15545| 0.9988499|
 
 This table is updated daily and is available in csv format here: 
 
