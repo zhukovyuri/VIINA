@@ -13,17 +13,12 @@ In addition to raw events, VIINA also includes data on territorial control, at t
 
 VIINA will be updated regularly, and is freely available for use by students, journalists, policymakers, and everyday researchers. 
 
-The most recent versions these data are available as a comma-delimited-text (csv) files here:
+The most recent versions these data are available as a comma-delimited-text (csv) files within the following compressed ZIP archives:
 
-- [Data/events_latest.csv](https://github.com/zhukovyuri/VIINA/tree/master/Data/events_latest.csv)
-- [Data/control_latest.csv](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest.csv)
+- [Data/events_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/events_latest.zip)
+- [Data/control_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest.zip)
 
-Previous versions are available here:
-
-- [Data/PreviousVersions/events_[YYYYMMDDHHMMSS].csv](https://github.com/zhukovyuri/VIINA/tree/master/Data/PreviousVersions)
-- [Data/PreviousVersions/control_[YYYYMMDDHHMMSS].csv](https://github.com/zhukovyuri/VIINA/tree/master/Data/PreviousVersions)
-
-where "YYYYMMDDHHMMSS" is a time stamp (e.g. 202202240001 is "00:01, February 24, 2022").
+Previous versions are available by request (email me).
 
 Please cite these data as:
 
