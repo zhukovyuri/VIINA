@@ -134,29 +134,29 @@ Below are in-sample prediction accuracy statistics for each variable (auc: area 
 
 |variable         |       auc|  n_p10|  n_p90| cutoff_01|
 |:----------------|---------:|------:|------:|---------:|
-|a_rus_pred       | 0.9625117|  65534|  51990| 0.9989990|
-|a_ukr_pred       | 0.9790662|  42433|  36306| 0.9989990|
-|a_civ_pred       | 0.9688808|   2435|   2402| 0.0070070|
-|a_other_pred     | 0.9666236|  20984|  15678| 0.9939924|
-|t_aad_pred       | 0.5342709|    588|    518| 0.3943943|
-|t_airstrike_pred | 0.9687927|  11338|  11205| 0.0300300|
-|t_armor_pred     | 0.7003273|    680|    546| 0.1151151|
-|t_arrest_pred    | 0.9598450|  15902|  15659| 0.0010010|
-|t_artillery_pred | 0.9799160|  39271|  36928| 0.9969970|
-|t_civcas_pred    | 0.9346929|  14358|  13144| 0.1471471|
-|t_control_pred   | 0.9962466|   6239|   2671| 0.0930930|
-|t_cyber_pred     | 0.9542463|  12348|  12252| 0.0010010|
-|t_firefight_pred | 0.9328212|   3489|   3064| 0.0270270|
-|t_hospital_pred  | 0.9292095|   2059|   2027| 0.0010010|
-|t_ied_pred       | 0.8919660|   2959|   2874| 0.0800801|
-|t_killing_pred   | 0.8035731|    736|    696| 0.0660661|
-|t_loc_pred       | 0.9674471| 161505| 144543| 0.0940941|
-|t_mil_pred       | 0.9728211| 227004| 157543| 0.2012013|
-|t_milcas_pred    | 0.9623564|   8636|   8263| 0.0020020|
-|t_occupy_pred    | 0.8521264|    703|    562| 0.0080078|
-|t_property_pred  | 0.8610299|   9231|   7357| 0.0320320|
-|t_raid_pred      | 0.9549815|   4972|   2652| 0.9909910|
-|t_san_pred       | 0.9955563|  37713|  33329| 0.8908909|
+|a_rus_pred       | 0.9628180|  70669|  59431| 0.9989990|
+|a_ukr_pred       | 0.9405332|  49684|  20195| 0.1101101|
+|a_civ_pred       | 0.9669938|   3791|   3750| 0.0070070|
+|a_other_pred     | 0.9846798|  25511|  19535| 0.9879864|
+|t_aad_pred       | 0.8902211|   5319|   2075| 0.3943943|
+|t_airstrike_pred | 0.9742825|  11282|  10741| 0.0300300|
+|t_armor_pred     | 0.9164914|   2582|   2387| 0.1151151|
+|t_arrest_pred    | 0.9561350|  12777|  11943| 0.0010010|
+|t_artillery_pred | 0.9797121|  30170|  29020| 0.0050050|
+|t_civcas_pred    | 0.9336995|  16518|  15599| 0.1471471|
+|t_control_pred   | 0.9668522|   7246|   1930| 0.1311311|
+|t_cyber_pred     | 0.9545307|  15241|  14950| 0.0010010|
+|t_firefight_pred | 0.9218680|   2498|   2218| 0.0270270|
+|t_hospital_pred  | 0.9637115|   4267|   4224| 0.0010010|
+|t_ied_pred       | 0.8799220|   5587|   5081| 0.8788788|
+|t_killing_pred   | 0.4706007|    736|    696| 0.0660661|
+|t_loc_pred       | 0.9755861| 165987| 152782| 0.9849849|
+|t_mil_pred       | 0.9913213| 238036| 168316| 0.2702703|
+|t_milcas_pred    | 0.9542418|  14734|  14485| 0.0010010|
+|t_occupy_pred    | 0.7750355|    703|    562| 0.0080078|
+|t_property_pred  | 0.8604804|   8888|   8651| 0.0320320|
+|t_raid_pred      | 0.9549815|   2698|   1941| 0.8218218|
+|t_san_pred       | 0.9934587|  55621|  54914| 0.9939940|
 
 This table is updated daily and is available in csv format here: 
 
@@ -339,7 +339,7 @@ A quick guide to what some the words mean:
 
 ![All events](Figures/Maps/map_ctr_latest.png)
 
-VIINA data on territorial control are built on a manually curated subset of the above event reports, indicating whether each district administrative center (райцентр) or other major city is presently under the control of Ukrainian forces, Russian forces, or is being actively contested between the two. Control status for all other (smaller) populated places is interpolated using the status of the geographically nearest administrative center.
+VIINA data on territorial control are based on three sources: VIINA event reports on territorial control, polygon map layers from DeepStateMap, and crowdsourced control maps from Wikipedia. In cases where the three data sources disagree, a "majority vote" rule is used to determine whether a populated place is under the control of Ukrainian forces, Russian forces, or is being actively contested between the two. 
 
 The full set of Ukrainian populated places (N = 33,156) includes all locations in the [GeoNames gazetteer](https://www.geonames.org/) with feature_code's beginning in PPL\*.
 
