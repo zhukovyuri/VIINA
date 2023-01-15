@@ -20,6 +20,10 @@ The most recent versions these data are available as a comma-delimited-text (csv
 
 Previous versions are available by request (email me).
 
+Also included are areal geometries of Ukrainain populated places (N = 33,141), which were used to create some of the maps on this site:
+
+- [Data/gn_UA_tess.geojson](https://github.com/zhukovyuri/VIINA/tree/master/Data/gn_UA_tess.geojson)
+
 Please cite these data as:
 
  - Zhukov, Yuri (2022). "VIINA: Violent Incident Information from News Articles on the 2022 Russian Invasion of Ukraine." Ann Arbor: University of Michigan, Center for Political Studies. ([https://github.com/zhukovyuri/VIINA](github.com/zhukovyuri/VIINA), accessed [DATE]).
@@ -356,6 +360,5 @@ Each territorial control dataset includes the following fields:
 
 Note that the timestamp reflects the time at which the relevant data were collected (typically every six hours or so), which naturally lags behind the reality on the ground.
 
-Territorial control data are presently missing for the following dates: 2022/02/24-2022/02/26, 2022/03/06-2022/03/07, 2022/05/16-2022/05/18. Data for these dates will be retroactively added in future updates.
-
+Territorial control data are presently missing for the following dates: 2022/03/06-2022/03/07, 2022/05/16-2022/05/18. Data for these dates will be retroactively added in future updates.
 
