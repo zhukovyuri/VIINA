@@ -20,7 +20,7 @@ The most recent versions these data are available as a comma-delimited-text (csv
 
 Previous versions are available by request (email me).
 
-Also included are areal geometries of Ukrainain populated places (N = 33,141), which were used to create some of the maps on this site:
+Also included are tessellated geometries of Ukrainian populated places (N = 33,141), which were used to create some of the maps on this site:
 
 - [Data/gn_UA_tess.geojson](https://github.com/zhukovyuri/VIINA/tree/master/Data/gn_UA_tess.geojson)
 
