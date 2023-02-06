@@ -35,17 +35,6 @@ Research Associate Professor, Center for Political Studies, Institute for Social
 zhukov-at-umich-dot-edu. [sites.lsa.umich.edu/zhukov](http://sites.lsa.umich.edu/zhukov).
 
 
-## Interactive Map
-
-To select and read individual event reports by location and time, please take a look at the dashboard developed by Robert McGrath and Eric McGlinchey at the Schar School of Policy and Government at George Mason University:
-
-- [go.gmu.edu/ukraine](https://go.gmu.edu/ukraine)
-
-[![Dashboard](Figures/Screenshots/dashboard_1.png)](https://go.gmu.edu/ukraine)
-
-Many thanks to Rob and Eric for getting this dashboard up and running!
-
-
 ## Data Sources
 
 **VIINA** draws on news reports from the following Ukrainian and Russian news providers:
@@ -95,7 +84,7 @@ Below are a map and timeline, showing the subset of **war-related** geocoded eve
 
 To generate predicted event categories, VIINA uses a recurrent neural network (RNN) model with long short-term memory (LSTM) ([Hochreiter and Schmidhuber, 1997](https://doi.org/10.1162/neco.1997.9.8.1735); [Chang and Masterson, 2020](https://doi.org/10.1017/pan.2019.46)). LSTMs are well-suited for learning problems related to sequential data, such as sequences of words of differential length, where the vocabulary is potentially large, and where the long-term context and dependencies between inputs are potentially informative for classification (i.e. where word order and context matters, and the bag-of-words assumption is problematic). 
 
-The current version of the data uses a training set of 2000+ randomly-selected hand-coded texts. This training set will be updated/expanded periodically as more and different types of events are added to the text corpus.
+The current version of the data uses a training set of 3500+ randomly-selected hand-coded texts. This training set will be updated/expanded periodically as more and different types of events are added to the text corpus.
 
 Estimation was done in Python with the Keras library.
 
@@ -111,17 +100,19 @@ The data currently include the following event categories:
 - a_other: Event initiated by a third party (e.g. U.S., EU, Red Cross)
 - t_aad: Anti-air defense, Buk, shoulder-fired missiles (Igla, Strela, Stinger)
 - t_airstrike: Air strike, strategic bombing, helicopter strike
+- t_airalert: Air raid siren/alert
 - t_armor: Tank battle or assault
 - t_arrest: Arrest by security services or detention of prisoners of war
 - t_artillery: Shelling by field artillery, howitzer, mortar, or rockets like Grad/BM-21, Uragan/BM-27, other Multiple Launch Rocket System (MRLS)
 - t_control: Establishment/claim of territorial control over population center
 - t_firefight: Any exchange of gunfire with handguns, semi-automatic rifles, automatic rifles, machine guns, rocket-propelled grenades (RPGs)
+- t_killing: Targeted killing or assassination
 - t_ied: Improvised explosive device, roadside bomb, landmine, car bomb, explosion 
 - t_raid: Assault/attack by paratroopers or special forces, usually followed by a retreat
 - t_occupy: Occupation of territory or building
 - t_property: Destruction of property or infrastructure
 - t_cyber: Cyber operations, including DDOS attacks, website defacement
-- t_hospitals: Attacks on hospitals and humanitarian convoys
+- t_hospital: Attacks on hospitals and humanitarian convoys
 - t_milcas: Event report mentions military casualties
 - t_civcas: Event report mentions civilian casualties
 
@@ -134,33 +125,34 @@ There are two versions of each variable included in the dataset:
 
 Cutoffs for dichotomizing the predicted probabilities were selected by minimizing Type I and Type II errors against the training set. For each variable, the algorithm considers every potential cutoff ranging from 0 to 1, compares the resulting binary values to training set labels, calculates rates of false positives and false negatives, and selects the cutoff that minimizes the sum of these rates. These cutoffs are different for each variable, and are enumerated in the table below.
 
-Below are in-sample prediction accuracy statistics for each variable (auc: area under the ROC curve, fitted values against training set labels), along with the number of events with probabilities greater than .10 (n_p10) and greater than .90 (n_p90). Also included are recommended cutoffs for dichotomizing each variable (cutoff_01).
+Below are in-sample and out-of-same prediction accuracy statistics for each variable, along with recommended cutoffs for dichotomizing each variable (cutoff_01).
 
-|variable         |       auc|  n_p10|  n_p90| cutoff_01|
-|:----------------|---------:|------:|------:|---------:|
-|a_rus_pred       | 0.9317027|  89687|  77788| 0.9969970|
-|a_ukr_pred       | 0.7840691|  47137|  37474| 0.9959960|
-|a_civ_pred       | 0.8420348|   8666|    119| 0.5965962|
-|a_other_pred     | 0.9652816|  38285|  33670| 0.4974975|
-|t_aad_pred       | 0.2371263|   1562|   1471| 0.0120120|
-|t_airstrike_pred | 0.7177833|  15616|  15450| 0.0320320|
-|t_armor_pred     | 0.4697445|   1080|    362| 0.0120120|
-|t_arrest_pred    | 0.7525851|   8650|   8527| 0.0270270|
-|t_artillery_pred | 0.9395559|  44008|  42615| 0.9099099|
-|t_civcas_pred    | 0.8976941|  13292|  12464| 0.7387387|
-|t_control_pred   | 0.8739030|   4355|   2394| 0.9919920|
-|t_cyber_pred     | 0.9573039|   9207|   8794| 0.0010010|
-|t_firefight_pred | 0.5577750|   2430|   1828| 0.9969969|
-|t_hospital_pred  | 0.6766086|   2358|   2198| 0.0010010|
-|t_ied_pred       | 0.8441341|   6919|   6868| 0.0130130|
-|t_killing_pred   | 0.2865419|   1708|   1619| 0.0070070|
-|t_loc_pred       | 0.8641502| 138384| 115810| 0.0910912|
-|t_mil_pred       | 0.9542235| 287308| 166314| 0.5175176|
-|t_milcas_pred    | 0.9036539|  11243|  10376| 0.9919920|
-|t_occupy_pred    | 0.8349681|   5413|   5110| 1.0000000|
-|t_property_pred  | 0.9361075|  15272|  13934| 0.9859860|
-|t_raid_pred      | 0.8813787|   2191|   2160| 0.9959960|
-|t_san_pred       | 0.9857272|  56679|  45875| 0.9989986|
+|variable    | accuracy_in_samp| accuracy_out_samp| cutoff_01|
+|:-----------|----------------:|-----------------:|---------:|
+|t_mil       |        0.9983416|         0.8057395| 0.0030202|
+|t_loc       |        0.9994472|         0.8476821| 0.9787595|
+|t_san       |        0.9994472|         0.9337748| 0.9999946|
+|a_rus       |        1.0000000|         0.8520972| 0.9654393|
+|a_ukr       |        0.9994472|         0.9448124| 0.9999800|
+|a_civ       |        0.9939193|         0.9955850| 0.9991993|
+|a_other     |        0.9535655|         0.9646799| 0.9999983|
+|t_aad       |        0.9900498|         0.9867550| 0.0114956|
+|t_airstrike |        1.0000000|         0.9845474| 1.0000000|
+|t_airalert  |        1.0000000|         0.9977925| 0.0135143|
+|t_armor     |        0.9900498|         0.9889625| 0.0119602|
+|t_arrest    |        1.0000000|         0.9602649| 0.0265005|
+|t_artillery |        1.0000000|         0.9492274| 0.4184284|
+|t_control   |        0.9994472|         0.9823400| 0.9992800|
+|t_firefight |        1.0000000|         0.9867550| 0.2301846|
+|t_killing   |        1.0000000|         0.9867550| 1.0000000|
+|t_ied       |        1.0000000|         0.9845474| 0.0954219|
+|t_raid      |        1.0000000|         0.9933775| 0.9955197|
+|t_occupy    |        1.0000000|         0.9889625| 1.0000000|
+|t_property  |        1.0000000|         0.9514349| 0.9987400|
+|t_cyber     |        1.0000000|         0.9602649| 0.0468209|
+|t_hospital  |        1.0000000|         0.9889625| 0.9911598|
+|t_milcas    |        1.0000000|         0.9779249| 0.9996800|
+|t_civcas    |        1.0000000|         0.9470199| 1.0000000|
 
 This table is updated daily and is available in csv format here: 
 
