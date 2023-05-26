@@ -15,10 +15,14 @@ VIINA will be updated regularly, and is freely available for use by students, jo
 
 The most recent versions these data are available as a comma-delimited-text (csv) files within the following compressed ZIP archives:
 
-- [Data/events_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/events_latest.zip)
-- [Data/control_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest.zip)
+- [Data/event_info_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest.zip) | Raw event reports (locations, dates, urls, headlines)
+- [Data/event_labels_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest.zip) | Event reports labeled by actor and tactic (from LSTM model)
+- [Data/event_1pd_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest.zip) | De-duplicated event reports and labels ("one-per-day" filter)
+- [Data/control_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest.zip) | Territorial control status
 
-Previous versions are available by request (email me).
+Note that each event data release includes both raw event reports (event_info, event_labels) and a simplified, de-duplicated data file (event_1pd). The latter uses a "one-per-day" filter to remove potential duplicate event reports, by treating multiple event reports of the same type (i.e. same combination of actor and tactic labels) in the same populated place on the same day as a single unique event.
+
+Previous data versions are available by request (email me).
 
 Also included are tessellated geometries of Ukrainian populated places (N = 33,141), which were used to create some of the maps on this site. These can be matched to the territorial control data by the variable `geonameid`:
 
@@ -53,10 +57,6 @@ zhukov-at-umich-dot-edu. [sites.lsa.umich.edu/zhukov](http://sites.lsa.umich.edu
 - [Українська правда](https://www.pravda.com.ua/) ("pravdaua"): Ukrainian newspaper
 - [РИА Новости](https://ria.ru/) ("ria"): Russian news wire service
 - [УНІАН](https://www.unian.info/) ("unian"): Ukrainian news wire service
-
-To be added soon: 
-
-- Event reports from OSINT social media feeds.
 
 This set of sources may expand/change as the war unfolds -- due to interruptions to journalistic activity from military operations, cyber attacks, and state censorship, as well as the availability of new data from other information providers.
 
@@ -312,23 +312,60 @@ A quick guide to what some the words mean:
 
 ## Codebook
 
+Raw event reports ([Data/event_info_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest.zip))
+- viina_version: Date and time of VIINA data release
 - event_id: Unique event ID
-- report_id: Unique ID for report that contains the event
-- location: Index of unique locations mentioned in each event
-- tempid: Temporary numeric ID
-- source: Data source short name
+- event_id_1pd: De-duplicated event ID (from one-per-day filter)
 - date: Date of event report (YYYYMMDD)
 - time: Time of event report (HH:MM)
-- url: URL web address of event report
-- text: Text of event report headline/description
-- lang: Language of report (ua is Ukrainian, ru is Russian)
-- address: Address of geocoded location
+- geonameid: Numeric ID of populated place
+- feature_code: Type of populated place (see [full list here](https://www.geonames.org/export/codes.html))
+- asciiname: Name of populated place, ASCII values
+- ADM1_NAME: Name of first-level administrative unit (oblast')
+- ADM1_CODE: Numerical code of first-level administrative unit (oblast')
+- ADM2_NAME: Name of second-level administrative unit (rayon)
+- ADM2_CODE: Numerical code of second-level administrative unit (rayon)
 - longitude: Longitude coordinate of event location
 - latitude: Latitude coordinate of event location
 - GEO_PRECISION: geographic precision of geocoded location
 - GEO_API: Geocoding API used to locate event
-- t_[event type]: Predicted probability that report describes event of each type (from LSTM model, see above)
-- a_[actor]: Predicted probability that report describes event initiated by each actor (from LSTM model, see above)
+- location: Index of unique locations mentioned in each event
+- address: Address of geocoded location
+- report_id: Unique ID for report that contains the event
+- source: Data source short name
+- url: URL web address of event report
+- text: Text of event report headline/description
+- lang: Language of report (ua is Ukrainian, ru is Russian)
+
+Event reports labeled by actor and tactic ([Data/event_labels_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest.zip)):
+- viina_version: Date and time of VIINA data release
+- event_id: Unique event ID
+- event_id_1pd: De-duplicated event ID (from one-per-day filter)
+- date: Date of event report (YYYYMMDD)
+- time: Time of event report (HH:MM)
+- geonameid: Numeric ID of populated place
+- t_[event type]: Predicted probability (and binary indicator) that report describes event of each type (from LSTM model, see above)
+- a_[actor]: Predicted probability (and binary indicator) that report describes event initiated by each actor (from LSTM model, see above)
+
+De-duplicated event reports and labels ([Data/event_1pd_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest.zip)):
+- viina_version: Date and time of VIINA data release
+- event_id_1pd: De-duplicated event ID (from one-per-day filter)
+- date: Date of event report (YYYYMMDD)
+- n_reports: Number of constitutive event reports 
+- event_ids: IDs of constitutive events (event_id in above two files)
+- sources: Sources for constitutive events (source in event_info_latest files)
+- geonameid: Numeric ID of populated place
+- feature_code: Type of populated place (see [full list here](https://www.geonames.org/export/codes.html))
+- asciiname: Name of populated place, ASCII values
+- ADM1_NAME: Name of first-level administrative unit (oblast')
+- ADM1_CODE: Numerical code of first-level administrative unit (oblast')
+- ADM2_NAME: Name of second-level administrative unit (rayon)
+- ADM2_CODE: Numerical code of second-level administrative unit (rayon)
+- longitude: Longitude coordinate of event location
+- latitude: Latitude coordinate of event location
+- GEO_PRECISION: geographic precision of geocoded location
+- t_[event type]: Binary indicator for each event type (from LSTM model, see above)
+- a_[actor]: Binary indicator for each actor (from LSTM model, see above)
 
 
 ## Territorial control
