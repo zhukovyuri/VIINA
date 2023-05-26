@@ -20,7 +20,7 @@ The most recent versions these data are available as a comma-delimited-text (csv
 - [Data/event_1pd_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest.zip) | De-duplicated event reports and labels ("one-per-day" filter)
 - [Data/control_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest.zip) | Territorial control status
 
-Note that each event data release includes both raw event reports (event_info, event_labels) and a simplified, de-duplicated data file (event_1pd). The latter uses a "one-per-day" filter to remove potential duplicate event reports, by treating multiple event reports of the same type (i.e. same combination of actor and tactic labels) in the same populated place on the same day as a single unique event.
+Note that each event data release includes both raw event reports (`event_info`, `event_labels`) and a simplified, de-duplicated data file (`event_1pd`). The latter uses a "one-per-day" filter to remove potential duplicate event reports, by treating multiple event reports of the same type (i.e. same combination of actor and tactic labels) in the same populated place on the same day as a single unique event.
 
 Previous data versions are available by request (email me).
 
@@ -352,8 +352,8 @@ De-duplicated event reports and labels ([Data/event_1pd_latest.zip](https://gith
 - event_id_1pd: De-duplicated event ID (from one-per-day filter)
 - date: Date of event report (YYYYMMDD)
 - n_reports: Number of constitutive event reports 
-- event_ids: IDs of constitutive events (event_id in above two files)
-- sources: Sources for constitutive events (source in event_info_latest files)
+- event_ids: IDs of constitutive events (`event_id` in above two files)
+- sources: Sources for constitutive events (`source` in event_info_latest files)
 - geonameid: Numeric ID of populated place
 - feature_code: Type of populated place (see [full list here](https://www.geonames.org/export/codes.html))
 - asciiname: Name of populated place, ASCII values
