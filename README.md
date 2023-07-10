@@ -71,8 +71,8 @@ Geocoding precision ranges from street-level (`GEO_PRECISION="STREET"`) to provi
 
 Below is a map of **all** geocoded event reports since the start of Russia's military operations on February 24, 2022. Underneath the map is a timeline, showing the number of event reports published per day, across all data sources.
 
-![All events](Figures/Maps/map_bert_all_latest.png "All event reports, by location")
-![All events](Figures/Time/time_bert_all_latest.png "All event reports, by time")
+![All events](Figures/Maps/map_all_latest.png "All event reports, by location")
+![All events](Figures/Time/time_all_latest.png "All event reports, by time")
 
 ## Event classification
 
@@ -102,13 +102,13 @@ The data currently include the following event categories:
 - t_milcas: Event report mentions military casualties
 - t_civcas: Event report mentions civilian casualties
 
-VIINA 2.0 uses a BERT-based transformer model to classify news headlines into the above event categories. Transformers, first developed by Google in 2017, are a class of neural networks that can provide significant performance and efficiency gains over previous generations of recurrent neural networks (RNNs) and convolutional neural networks (CNNs) by using attention, which tracks relationships between elements of the data and enabling significant parallelization. One high-performing and widely-utilized transformer model is Bidirectional Encoder Representations from Transformers (BERT), developed by Google in 2018. This model uses only transformer encoder layers, whereas other models make use of both encoders and decoders, or only decoders. 
+VIINA 2.0 uses a BERT-based transformer model ([Devlin, et al., 2018](https://doi.org/10.48550/arXiv.1810.04805)) to classify news headlines into the above event categories. Transformers, first developed by Google in 2017, are a class of neural networks that can provide significant performance and efficiency gains over previous generations of recurrent neural networks (RNNs) and convolutional neural networks (CNNs) by using attention, which tracks relationships between elements of the data and enabling significant parallelization. One high-performing and widely-utilized transformer model is Bidirectional Encoder Representations from Transformers (BERT), developed by Google in 2018. This model uses only transformer encoder layers, whereas other models make use of both encoders and decoders, or only decoders. 
 
-We employ an iteration of the BERT-base model, trained using 12 transformer layers, 110 million parameters, and 3.3 billion words. This BERT-base model was further developed into [ruBERT](https://huggingface.co/ai-forever/ruBert-base), a Russian-language version of BERT, by the SberDevices team who trained the BERT model on Russian texts. For VIINA 2.0, we use [KoichiYasouka's bert-base-slavic-cyrillic-upos model](https://huggingface.co/KoichiYasuoka/bert-base-slavic-cyrillic-upos), an iteration of the ruBERT-base model trained on Belarusian, Bulgarian, Russian, Serbian, and Ukrainian texts for part-of-speech tasks. We fine-tune this model for classification using a labeled random subset of the Ukrainian and Russian news headlines scraped for VIINA and use the resulting fully-trained model to categorize all VIINA headlines. 
+We employ an iteration of the BERT-base model, pre-trained using 12 transformer layers, 110 million parameters, and 3.3 billion words. Specifically, we use [KoichiYasouka's bert-base-slavic-cyrillic-upos model](https://huggingface.co/KoichiYasuoka/bert-base-slavic-cyrillic-upos), an iteration of the [ruBERT](https://huggingface.co/ai-forever/ruBert-base)-base model trained on Belarusian, Bulgarian, Russian, Serbian, and Ukrainian texts for part-of-speech tasks. We fine-tune this model for classification using a labeled random subset of the Ukrainian and Russian news headlines scraped for VIINA and use the resulting fully-trained model to categorize all VIINA headlines. 
 
-The previous version of VIINA (1.0) used an RNN model with long short-term memory (LSTM) ([Hochreiter and Schmidhuber, 1997](https://doi.org/10.1162/neco.1997.9.8.1735); [Chang and Masterson, 2020](https://doi.org/10.1017/pan.2019.46)). LSTMs are well-suited for learning problems related to sequential data, such as sequences of words of differential length, where the vocabulary is potentially large, and where the long-term context and dependencies between inputs are potentially informative for classification (i.e. where word order and context matters, and the bag-of-words assumption is problematic). 
+The previous version of VIINA (1.0) used an RNN model with long short-term memory (LSTM) ([Hochreiter and Schmidhuber, 1997](https://doi.org/10.1162/neco.1997.9.8.1735)). LSTMs are well-suited for learning problems related to sequential data, such as sequences of words of differential length, where the vocabulary is potentially large, and where the long-term context and dependencies between inputs are potentially informative for classification (i.e. where word order and context matters, and the bag-of-words assumption is problematic). 
 
-Below is a comparison of out-of-sample classification accuracy statistics --- areas under the Receiver-Operator Characteristic (AUC ROC) curves --- for each variable from the BERT and LSTM models. The areas under the ROC curves can be interpreted as the probability that a randomly chosen event (e.g. `t_mil=1`) receives a higher predicted probability than a randomly chosen non-event (e.g. `t_mil=0`). An AUC of 1 indicates perfect out-of-sample accuracy. An AUC of 0.50 indicates that a model performs no better than random classifications. AUCs can be particularly useful in evaluating predictive performance for categories with high class imbalance (i.e. rare events, with a lot of 0's and very few 1's).  
+Below is a comparison of out-of-sample classification accuracy statistics --- areas under the Receiver-Operator Characteristic (AUC ROC) curves --- for the BERT (`roc_bert`) and LSTM (`roc_lstm`) models. These statistics can be interpreted as the probability that the model assigns a higher predicted probability to a randomly chosen event (e.g. `t_mil=1`) than to a randomly chosen non-event (e.g. `t_mil=0`). An AUC of 1 indicates perfect out-of-sample accuracy. An AUC of 0.50 indicates that a model performs no better than random classification. AUCs can be particularly useful in evaluating predictive performance for categories with high class imbalance (i.e. rare events, with a lot of 0's and very few 1's).  
 
 As the table suggests, BERT universally dominates LSTM on this metric:
 
@@ -140,9 +140,9 @@ As the table suggests, BERT universally dominates LSTM on this metric:
 As a general rule of thumb, we urge users of VIINA data to avoid variables for which the out-of-sample AUC is less than 0.80. Some additional caution is warranted here, since the randomly-selected data sample used to evaluate out-of-sample predictive accuracy has limited positive examples for some variables (e.g. `t_raid` and `t_occupy` each have only one positive instance in this table). 
 
 While VIINA 1.0 will no longer be updated, the most recent version is available in archived form here:
-- [Data/Version_1_0/event_info_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/Version_1_0/event_info_latest.zip) | Raw event reports (locations, dates, urls, headlines)
-- [Data/Version_1_0/event_labels_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/Version_1_0/event_labels_latest.zip) | Event reports labeled by actor and tactic (from LSTM model)
-- [Data/Version_1_0/event_1pd_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/Version_1_0/event_1pd_latest.zip) | De-duplicated event reports and labels ("one-per-day" filter)
+- [Data/PreviousVersions/event_info_latest_v1.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/PreviousVersions/event_info_latest_v1.zip) | Raw event reports (locations, dates, urls, headlines)
+- [Data/PreviousVersions/event_labels_latest_v1.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/PreviousVersions/event_labels_latest_v1.zip) | Event reports labeled by actor and tactic (from LSTM model)
+- [Data/PreviousVersions/event_1pd_latest_v1.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/PreviousVersions/event_1pd_latest_v1.zip) | De-duplicated event reports and labels ("one-per-day" filter)
 
 There are two versions of each variable included in the VIINA dataset:
 
@@ -180,7 +180,7 @@ Below are detailed out-of-same prediction accuracy statistics for each variable,
 |t_retreat   | 0.2857143|       1| 0.9898374| 0.9918534|      0.005|
 |t_airalert  | 0.7500000|       5| 0.9959350| 0.8078029|      0.008|
 
-This tableis available in csv format here: 
+This table is available in csv format here: 
 
 - [classification_report_bert.csv](https://github.com/zhukovyuri/VIINA/tree/master/Diagnostics/classification_report_bert.csv)
 
