@@ -1,17 +1,15 @@
-# VIINA / Violent Incident Information from News Articles 
+# VIINA 2.0 / Violent Incident Information from News Articles 
 ## 2022 Russian Invasion of Ukraine
 
 ![All events](Figures/Maps/map_anim_latest.gif) (events)
 
 ![Control](Figures/Maps/ctr_anim_latest.gif) (territorial control)
 
-VIINA/ВІЙНА/ВОЙНА/WAR is a near-real time multi-source event data system for the 2022 Russian Invasion of Ukraine. These data are based on news reports from Ukrainian and Russian media, which were geocoded and classified into standard conflict event categories through machine learning. 
+VIINA/ВІЙНА/ВОЙНА/WAR 2.0 is a near-real time multi-source event data system for the 2022 Russian Invasion of Ukraine. These data are based on news reports from Ukrainian and Russian media, which were geocoded and classified into standard conflict event categories through machine learning. In addition to raw events, VIINA also includes data on territorial control, at the level of individual populated places.
 
 These data are GIS-ready, with temporal precision down to the minute. Each observation is accompanied by full source information, text and URLs.
 
-In addition to raw events, VIINA also includes data on territorial control, at the level of individual populated places.
-
-VIINA will be updated regularly, and is freely available for use by students, journalists, policymakers, and everyday researchers. 
+VIINA is updated daily, and is freely available for use by students, journalists, policymakers, and everyday researchers. 
 
 The most recent versions these data are available as a comma-delimited-text (csv) files within the following compressed ZIP archives:
 
@@ -28,22 +26,25 @@ Also included are tessellated geometries of Ukrainian populated places (N = 33,1
 
 - [Data/gn_UA_tess.geojson](https://github.com/zhukovyuri/VIINA/tree/master/Data/gn_UA_tess.geojson)
 
-Please cite these data as:
+For additional information on VIINA (1.0) and illustrative analyses, see:
 
- - Zhukov, Yuri (2022). "VIINA: Violent Incident Information from News Articles on the 2022 Russian Invasion of Ukraine." Ann Arbor: University of Michigan, Center for Political Studies. ([https://github.com/zhukovyuri/VIINA](github.com/zhukovyuri/VIINA), accessed [DATE]).
+ - Zhukov, Yuri (2023). "Near-Real Time Analysis of War and Economic Activity during Russia’s Invasion of Ukraine." *Journal of Comparative Economics* ([doi.org/10.1016/j.jce.2023.06.003](https://doi.org/10.1016/j.jce.2023.06.003)). Offprint [available here](https://zhukovyuri.github.io/files/2023_Zhukov_JCE.pdf).
+
+Please cite VIINA 2.0 data as:
+
+ - Zhukov, Yuri and Natalie Ayers (2023). "VIINA 2.0: Violent Incident Information from News Articles on the 2022 Russian Invasion of Ukraine." Cambridge, MA: Harvard University. ([https://github.com/zhukovyuri/VIINA](github.com/zhukovyuri/VIINA), accessed [DATE]).
 
 Corrections, feedback welcome: 
 
-Yuri M. Zhukov. Associate Professor of Political Science, University of Michigan. 
-Research Associate Professor, Center for Political Studies, Institute for Social Research.
-zhukov-at-umich-dot-edu. [sites.lsa.umich.edu/zhukov](http://sites.lsa.umich.edu/zhukov).
+Yuri M. Zhukov. Visiting Associate Professor of Public Policy, Harvard Kennedy School. yzhukov-at-hks-dot-harvard-dot-edu. [zhukovyuri.github.io](https://zhukovyuri.github.io).
 
 
 ## Data Sources
 
-**VIINA** draws on news reports from the following Ukrainian and Russian news providers:
+**VIINA 2.0** draws on news reports from the following Ukrainian and Russian news providers:
 
 - [24 Канал](https://24tv.ua/) ("24tvua"): Ukrainian 24 hour news network
+- [Espreso TV](https://espreso.tv/) ("espreso"): Ukrainian Internet TV station
 - [Forbes Ukraine](https://forbes.ua/) ("forbesua"): Ukrainian edition of Forbes magazine
 - [Інтерфакс-Україна](https://interfax.com.ua/) ("interfaxua"): Ukrainian affiliate of Russia's Interfax news wire service
 - [Комсомольская Правда](https://www.kp.ru/) ("kp"): Russian newspaper
@@ -60,38 +61,24 @@ zhukov-at-umich-dot-edu. [sites.lsa.umich.edu/zhukov](http://sites.lsa.umich.edu
 
 This set of sources may expand/change as the war unfolds -- due to interruptions to journalistic activity from military operations, cyber attacks, and state censorship, as well as the availability of new data from other information providers.
 
-Using an automated web scraping routine (which runs every 6 hours), VIINA extracts the text of news reports published by each source and their associated metadata (publication time and date, web urls). Using natural language processing, the system extracts and geocodes location names mentioned in each news item. A recurrent neural network then classifies each event report into several pre-defined categories.
-
+Using an automated web scraping routine (which runs every 6 hours), VIINA extracts the text of news reports published by each source and their associated metadata (publication time and date, web urls). Using natural language processing, the system extracts and geocodes location names mentioned in each news item. A neural network model then classifies each event report into several pre-defined categories.
 
 ## Geocoding
 
 Events were geo-located by place names mentioned in the text of each news report, using APIs from Yandex and OpenStreetMaps. All unique geocoded locations were manually inspected for false positive and false negative matches.
 
-Geocoding precision ranges from street-level (GEO_PRECISION="STREET") to province-level (GEO_PRECISION="ADM1").
+Geocoding precision ranges from street-level (`GEO_PRECISION="STREET"`) to province-level (`GEO_PRECISION="ADM1"`).
 
 Below is a map of **all** geocoded event reports since the start of Russia's military operations on February 24, 2022. Underneath the map is a timeline, showing the number of event reports published per day, across all data sources.
 
-![All events](Figures/Maps/map_all_latest.png "All event reports, by location")
-![All events](Figures/Time/time_all_latest.png "All event reports, by time")
-
-Below are a map and timeline, showing the subset of **war-related** geocoded event reports (i.e. t_mil_b == 1, see below for details).
-
-![War events](Figures/Maps/map_war_latest.png "War event reports, by location")
-![War events](Figures/Time/time_war_latest.png "War event reports, by time")
-
+![All events](Figures/Maps/map_bert_all_latest.png "All event reports, by location")
+![All events](Figures/Time/time_bert_all_latest.png "All event reports, by time")
 
 ## Event classification
-
-To generate predicted event categories, VIINA uses a recurrent neural network (RNN) model with long short-term memory (LSTM) ([Hochreiter and Schmidhuber, 1997](https://doi.org/10.1162/neco.1997.9.8.1735); [Chang and Masterson, 2020](https://doi.org/10.1017/pan.2019.46)). LSTMs are well-suited for learning problems related to sequential data, such as sequences of words of differential length, where the vocabulary is potentially large, and where the long-term context and dependencies between inputs are potentially informative for classification (i.e. where word order and context matters, and the bag-of-words assumption is problematic). 
-
-The current version of the data uses a training set of 3500+ randomly-selected hand-coded texts. This training set will be updated/expanded periodically as more and different types of events are added to the text corpus.
-
-Estimation was done in Python with the Keras library.
 
 The data currently include the following event categories:
 
 - t_mil: Event is about war/military operations
-- t_nmil: Event is not about war/military operations (e.g. human interest story)
 - t_loc: Event report includes reference to specific location
 - t_san: Event report mentions economic sanctions imposed on Russia
 - a_rus: Event initiated by Russian or Russian-aligned armed forces
@@ -106,7 +93,6 @@ The data currently include the following event categories:
 - t_artillery: Shelling by field artillery, howitzer, mortar, or rockets like Grad/BM-21, Uragan/BM-27, other Multiple Launch Rocket System (MRLS)
 - t_control: Establishment/claim of territorial control over population center
 - t_firefight: Any exchange of gunfire with handguns, semi-automatic rifles, automatic rifles, machine guns, rocket-propelled grenades (RPGs)
-- t_killing: Targeted killing or assassination
 - t_ied: Improvised explosive device, roadside bomb, landmine, car bomb, explosion 
 - t_raid: Assault/attack by paratroopers or special forces, usually followed by a retreat
 - t_occupy: Occupation of territory or building
@@ -116,47 +102,87 @@ The data currently include the following event categories:
 - t_milcas: Event report mentions military casualties
 - t_civcas: Event report mentions civilian casualties
 
-This set of categories will expand in the future, as more and different types of events are added to the text corpus.
+VIINA 2.0 uses a BERT-based transformer model to classify news headlines into the above event categories. Transformers, first developed by Google in 2017, are a class of neural networks that can provide significant performance and efficiency gains over previous generations of recurrent neural networks (RNNs) and convolutional neural networks (CNNs) by using attention, which tracks relationships between elements of the data and enabling significant parallelization. One high-performing and widely-utilized transformer model is Bidirectional Encoder Representations from Transformers (BERT), developed by Google in 2018. This model uses only transformer encoder layers, whereas other models make use of both encoders and decoders, or only decoders. 
 
-There are two versions of each variable included in the dataset:
+We employ an iteration of the BERT-base model, trained using 12 transformer layers, 110 million parameters, and 3.3 billion words. This BERT-base model was further developed into [ruBERT](https://huggingface.co/ai-forever/ruBert-base), a Russian-language version of BERT, by the SberDevices team who trained the BERT model on Russian texts. For VIINA 2.0, we use [KoichiYasouka's bert-base-slavic-cyrillic-upos model](https://huggingface.co/KoichiYasuoka/bert-base-slavic-cyrillic-upos), an iteration of the ruBERT-base model trained on Belarusian, Bulgarian, Russian, Serbian, and Ukrainian texts for part-of-speech tasks. We fine-tune this model for classification using a labeled random subset of the Ukrainian and Russian news headlines scraped for VIINA and use the resulting fully-trained model to categorize all VIINA headlines. 
 
-1. Predicted probabilities (ending with "\_pred"): predicted probability that event belongs to each category, from the LSTM model
-2. Binary indicators (ending with "\_b"): dummy variables, coded 1 or 0
+The previous version of VIINA (1.0) used an RNN model with long short-term memory (LSTM) ([Hochreiter and Schmidhuber, 1997](https://doi.org/10.1162/neco.1997.9.8.1735); [Chang and Masterson, 2020](https://doi.org/10.1017/pan.2019.46)). LSTMs are well-suited for learning problems related to sequential data, such as sequences of words of differential length, where the vocabulary is potentially large, and where the long-term context and dependencies between inputs are potentially informative for classification (i.e. where word order and context matters, and the bag-of-words assumption is problematic). 
 
-Cutoffs for dichotomizing the predicted probabilities were selected by minimizing Type I and Type II errors against the training set. For each variable, the algorithm considers every potential cutoff ranging from 0 to 1, compares the resulting binary values to training set labels, calculates rates of false positives and false negatives, and selects the cutoff that minimizes the sum of these rates. These cutoffs are different for each variable, and are enumerated in the table below.
+Below is a comparison of out-of-sample classification accuracy statistics --- areas under the Receiver-Operator Characteristic (AUC ROC) curves --- for each variable from the BERT and LSTM models. The areas under the ROC curves can be interpreted as the probability that a randomly chosen event (e.g. `t_mil=1`) receives a higher predicted probability than a randomly chosen non-event (e.g. `t_mil=0`). An AUC of 1 indicates perfect out-of-sample accuracy. An AUC of 0.50 indicates that a model performs no better than random classifications. AUCs can be particularly useful in evaluating predictive performance for categories with high class imbalance (i.e. rare events, with a lot of 0's and very few 1's).  
 
-Below are in-sample and out-of-same prediction accuracy statistics for each variable, along with recommended cutoffs for dichotomizing each variable (cutoff_01).
+As the table suggests, BERT universally dominates LSTM on this metric:
 
-|variable    | accuracy_in_samp| accuracy_out_samp| cutoff_01|
-|:-----------|----------------:|-----------------:|---------:|
-|t_mil       |        0.9983416|         0.8057395| 0.9997400|
-|t_loc       |        0.9994472|         0.8476821| 0.2095443|
-|t_san       |        0.9994472|         0.9337748| 0.7306507|
-|a_rus       |        1.0000000|         0.8520972| 0.3852877|
-|a_ukr       |        0.9994472|         0.9448124| 0.9999800|
-|a_civ       |        0.9939193|         0.9955850| 0.9991993|
-|a_other     |        0.9535655|         0.9646799| 1.0000000|
-|t_aad       |        0.9900498|         0.9867550| 0.9964787|
-|t_airstrike |        1.0000000|         0.9845474| 1.0000000|
-|t_airalert  |        1.0000000|         0.9977925| 0.0120273|
-|t_armor     |        0.9900498|         0.9889625| 0.0119602|
-|t_arrest    |        1.0000000|         0.9602649| 1.0000000|
-|t_artillery |        1.0000000|         0.9492274| 0.0752815|
-|t_control   |        0.9994472|         0.9823400| 1.0000000|
-|t_firefight |        1.0000000|         0.9867550| 0.9936799|
-|t_killing   |        1.0000000|         0.9867550| 1.0000000|
-|t_ied       |        1.0000000|         0.9845474| 0.9995400|
-|t_raid      |        1.0000000|         0.9933775| 0.9955199|
-|t_occupy    |        1.0000000|         0.9889625| 1.0000000|
-|t_property  |        1.0000000|         0.9514349| 0.9987400|
-|t_cyber     |        1.0000000|         0.9602649| 0.9999800|
-|t_hospital  |        1.0000000|         0.9889625| 0.0156603|
-|t_milcas    |        1.0000000|         0.9779249| 0.9999400|
-|t_civcas    |        1.0000000|         0.9470199| 1.0000000|
+|variable    | support|  roc_bert|  roc_lstm|
+|:-----------|-------:|---------:|---------:|
+|t_mil       |     137| 0.9510229| 0.8985504|
+|t_loc       |     105| 0.9799434| 0.9216439|
+|t_san       |      35| 0.8817756| 0.4954361|
+|a_rus       |      50| 0.9491855| 0.8020814|
+|a_ukr       |      29| 0.9323006| 0.8054666|
+|a_civ       |       3| 0.8302658| 0.7634628|
+|a_other     |      20| 0.8152542| 0.6826271|
+|t_aad       |       2| 1.0000000| 0.5346939|
+|t_airstrike |       4| 0.9390369| 0.5030738|
+|t_arrest    |       8| 0.9857955| 0.5010331|
+|t_artillery |      34| 0.9915875| 0.9021320|
+|t_control   |       5| 0.9075975| 0.5051335|
+|t_firefight |       3| 0.9727335| 0.5051125|
+|t_ied       |       4| 1.0000000| 0.9659324|
+|t_property  |      11| 0.9293139| 0.8571159|
+|t_raid      |       1| 0.9959267| 0.5885947|
+|t_occupy    |       1| 1.0000000| 0.5030550|
+|t_cyber     |      11| 1.0000000| 0.8941599|
+|t_milcas    |       9| 0.9878077| 0.7786980|
+|t_civcas    |      13| 0.9991970| 0.5052192|
+|t_retreat   |       1| 0.9918534| 0.4949084|
+|t_airalert  |       5| 0.8078029| 0.7219713|
 
-This table is updated daily and is available in csv format here: 
+As a general rule of thumb, we urge users of VIINA data to avoid variables for which the out-of-sample AUC is less than 0.80. Some additional caution is warranted here, since the randomly-selected data sample used to evaluate out-of-sample predictive accuracy has limited positive examples for some variables (e.g. `t_raid` and `t_occupy` each have only one positive instance in this table). 
 
-- [auc_latest.csv](https://github.com/zhukovyuri/VIINA/tree/master/Diagnostics/auc_latest.csv)
+While VIINA 1.0 will no longer be updated, the most recent version is available in archived form here:
+- [Data/Version_1_0/event_info_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/Version_1_0/event_info_latest.zip) | Raw event reports (locations, dates, urls, headlines)
+- [Data/Version_1_0/event_labels_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/Version_1_0/event_labels_latest.zip) | Event reports labeled by actor and tactic (from LSTM model)
+- [Data/Version_1_0/event_1pd_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/Version_1_0/event_1pd_latest.zip) | De-duplicated event reports and labels ("one-per-day" filter)
+
+There are two versions of each variable included in the VIINA dataset:
+
+1. Predicted probability that event belongs to each category, from the BERT model: Floating point, from 0 to 1.
+2. Binary indicators (ending with "\_b"): binary integer, coded 0 or 1.
+
+We selected thresholds for dichotomizing the predicted probabilities by maximizing the F~1 score against a pre-labeled (out-of-sample) test set. The F~1 score is equivalent to the harmonic mean of precision and recall, or TP/(TP + 1/2(FP+FN)), where TP is the number of true positives, FP is false positives, and FN is false negatives. For each variable, the algorithm considers every potential cutoff ranging from 0 to 1, compares the resulting binary values to "true" labels, calculates the F~1 score, and selects the cutoff that maximizes this score. These cutoffs are different for each variable, and are enumerated in the table below.
+
+Below are detailed out-of-same prediction accuracy statistics for each variable, along with the cutoffs for dichotomizing each variable (cutoff_01).
+
+|variable    |  f1-score| support|  accuracy|   roc-auc| thresholds|
+|:-----------|---------:|-------:|---------:|---------:|----------:|
+|t_mil       | 0.8531469|     137| 0.9146341| 0.9510229|      0.955|
+|t_loc       | 0.8918919|     105| 0.9512195| 0.9799434|      0.501|
+|t_san       | 0.7397260|      35| 0.9613821| 0.8817756|      0.967|
+|a_rus       | 0.7346939|      50| 0.9471545| 0.9491855|      0.893|
+|a_ukr       | 0.7450980|      29| 0.9735772| 0.9323006|      0.857|
+|a_civ       | 0.3636364|       3| 0.9857724| 0.8302658|      0.217|
+|a_other     | 0.3888889|      20| 0.9552846| 0.8152542|      0.747|
+|t_aad       | 1.0000000|       2| 1.0000000| 1.0000000|      0.075|
+|t_airstrike | 0.8571429|       4| 0.9979675| 0.9390369|      0.054|
+|t_armor     | 0.0000000|       0| 1.0000000|        NA|      0.500|
+|t_arrest    | 0.6363636|       8| 0.9837398| 0.9857955|      0.025|
+|t_artillery | 0.8888889|      34| 0.9837398| 0.9915875|      0.045|
+|t_control   | 0.6666667|       5| 0.9918699| 0.9075975|      0.017|
+|t_firefight | 0.5000000|       3| 0.9959350| 0.9727335|      0.589|
+|t_ied       | 1.0000000|       4| 1.0000000| 1.0000000|      0.753|
+|t_property  | 0.5714286|      11| 0.9817073| 0.9293139|      0.143|
+|t_raid      | 0.5000000|       1| 0.9959350| 0.9959267|      0.065|
+|t_occupy    | 1.0000000|       1| 1.0000000| 1.0000000|      0.059|
+|t_cyber     | 1.0000000|      11| 1.0000000| 1.0000000|      0.044|
+|t_hospital  | 0.0000000|       0| 1.0000000|        NA|      0.500|
+|t_milcas    | 0.8000000|       9| 0.9939024| 0.9878077|      0.457|
+|t_civcas    | 0.9600000|      13| 0.9979675| 0.9991970|      0.968|
+|t_retreat   | 0.2857143|       1| 0.9898374| 0.9918534|      0.005|
+|t_airalert  | 0.7500000|       5| 0.9959350| 0.8078029|      0.008|
+
+This tableis available in csv format here: 
+
+- [classification_report_bert.csv](https://github.com/zhukovyuri/VIINA/tree/master/Diagnostics/classification_report_bert.csv)
 
 Note that these statistics are subject to change, as new events are added to the corpus and as the training set expands.
 
