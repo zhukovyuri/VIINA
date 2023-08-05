@@ -52,6 +52,7 @@ Yuri M. Zhukov. Visiting Associate Professor of Public Policy, Harvard Kennedy S
 - [Live Universal Awareness Map](https://liveuamap.com/) ("liveuamap"): Ukrainian conflict event mapping service       
 - [Мілітарний](https://mil.in.ua/uk/) ("militarnyy"): Ukrainian defense news portal
 - [Медиазона](https://zona.media/) ("mz"): Russian news portal
+- [Медуза](https://meduza.io/) ("meduza"): Russian news portal
 - [НВ](https://nv.ua/ukr?utm_content=set_lang) ("nv"): Ukrainian magazine and internet news portal
 - [Независимая Газета](https://www.ng.ru/news/) ("ng"): Russian newspaper
 - [НТВ](https://www.ntv.ru/novosti/) ("ntv"): Russian television news
