@@ -81,8 +81,8 @@ Here is the subset of events under the category of "military operations" (`t_mil
 
 Here are the same data, after passing through a "one-per-day" filter to remove potential duplicates (`event_1pd_latest.csv`):
 
-![All events](Figures/Time/time_1pd_all_latest.png "All event reports, with one-a-day filter")
-![All events](Figures/Time/time_1pd_war_latest.png "Reports about military operations, with one-a-day filter")
+![All events](Figures/Time/time_1pd_all_latest.png "All event reports, with one-a-day filter") (all event types, one-per-day filter)
+![All events](Figures/Time/time_1pd_war_latest.png "Reports about military operations, with one-a-day filter") (reports about military operations, one-per-day filter)
 
 
 ## Event classification
