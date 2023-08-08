@@ -160,7 +160,7 @@ There are two versions of each variable included in the VIINA dataset:
 1. Predicted probability that event belongs to each category, from the BERT model: Floating point, from 0 to 1.
 2. Binary indicators (ending with "\_b"): binary integer, coded 0 or 1.
 
-We selected thresholds for dichotomizing the predicted probabilities by maximizing the F~1 score against a pre-labeled (out-of-sample) test set. The F~1 score is equivalent to the harmonic mean of precision and recall, or TP/(TP + 1/2(FP+FN)), where TP is the number of true positives, FP is false positives, and FN is false negatives. For each variable, the algorithm considers every potential cutoff ranging from 0 to 1, compares the resulting binary values to "true" labels, calculates the F~1 score, and selects the cutoff that maximizes this score. These cutoffs are different for each variable, and are enumerated in the table below.
+We selected thresholds for dichotomizing the predicted probabilities by maximizing the F1 score against a pre-labeled (out-of-sample) test set. The F1 score is equivalent to the harmonic mean of precision and recall, or TP/(TP + 1/2(FP+FN)), where TP is the number of true positives, FP is false positives, and FN is false negatives. For each variable, the algorithm considers every potential cutoff ranging from 0 to 1, compares the resulting binary values to "true" labels, calculates the F1 score, and selects the cutoff that maximizes this score. These cutoffs are different for each variable, and are enumerated in the table below.
 
 Below are detailed out-of-same prediction accuracy statistics for each variable, along with the cutoffs for dichotomizing each variable (cutoff_01).
 
