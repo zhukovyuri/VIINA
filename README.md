@@ -1,9 +1,9 @@
 # VIINA 2.0 / Violent Incident Information from News Articles 
 ## 2022 Russian Invasion of Ukraine
 
-![All events](Figures/Maps/map_anim_latest.gif) (events)
-
 ![Control](Figures/Maps/ctr_anim_latest.gif) (territorial control)
+
+![All events](Figures/Maps/map_anim_latest.gif) (events)
 
 VIINA/ВІЙНА/ВОЙНА/WAR 2.0 is a near-real time multi-source event data system for the 2022 Russian Invasion of Ukraine. These data are based on news reports from Ukrainian and Russian media, which were geocoded and classified into standard conflict event categories through machine learning. In addition to raw events, VIINA also includes data on territorial control, at the level of individual populated places.
 
@@ -37,7 +37,6 @@ Please cite VIINA 2.0 data as:
 Corrections, feedback welcome: 
 
 Yuri M. Zhukov. Visiting Associate Professor of Public Policy, Harvard Kennedy School. yzhukov-at-hks-dot-harvard-dot-edu. [zhukovyuri.github.io](https://zhukovyuri.github.io).
-
 
 ## Data Sources
 
@@ -74,6 +73,17 @@ Below is a map of **all** geocoded event reports since the start of Russia's mil
 
 ![All events](Figures/Maps/map_all_latest.png "All event reports, by location")
 ![All events](Figures/Time/time_all_latest.png "All event reports, by time")
+
+Here is the subset of events under the category of "military operations" (`t_mil_b=1`):
+
+![All events](Figures/Maps/map_war_latest.png "Reports about military operations, by location")
+![All events](Figures/Time/time_war_latest.png "Reports about military operations, by time")
+
+Here are the same data, after passing through a "one-per-day" filter to remove potential duplicates (`event_1pd_latest.csv`):
+
+![All events](Figures/Time/time_1pd_all_latest.png "All event reports, with one-a-day filter")
+![All events](Figures/Time/time_1pd_war_latest.png "Reports about military operations, with one-a-day filter")
+
 
 ## Event classification
 
@@ -371,8 +381,8 @@ Event reports labeled by actor and tactic ([Data/event_labels_latest.zip](https:
 - date: Date of event report (YYYYMMDD)
 - time: Time of event report (HH:MM)
 - geonameid: Numeric ID of populated place
-- t_[event type]: Predicted probability (and binary indicator) that report describes event of each type (from LSTM model, see above)
-- a_[actor]: Predicted probability (and binary indicator) that report describes event initiated by each actor (from LSTM model, see above)
+- t_[event type]: Predicted probability (and binary indicator) that report describes event of each type (from BERT model, see above)
+- a_[actor]: Predicted probability (and binary indicator) that report describes event initiated by each actor (from BERT model, see above)
 
 De-duplicated event reports and labels ([Data/event_1pd_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest.zip)):
 - viina_version: Date and time of VIINA data release
@@ -391,8 +401,8 @@ De-duplicated event reports and labels ([Data/event_1pd_latest.zip](https://gith
 - longitude: Longitude coordinate of event location
 - latitude: Latitude coordinate of event location
 - GEO_PRECISION: geographic precision of geocoded location
-- t_[event type]: Binary indicator for each event type (from LSTM model, see above)
-- a_[actor]: Binary indicator for each actor (from LSTM model, see above)
+- t_[event type]: Binary indicator for each event type (from BERT model, see above)
+- a_[actor]: Binary indicator for each actor (from BERT model, see above)
 
 
 ## Territorial control
@@ -406,15 +416,10 @@ The full set of Ukrainian populated places (N = 33,156) includes all locations i
 Each territorial control dataset includes the following fields:
 
 - geonameid: Numeric ID of populated place
-- name: Name of populated place
-- asciiname: Name of populated place, ASCII values
-- alternatenames: Alternative spellings of place name
-- longitude: Longitude coordinate of populated place
-- latitude: Latitude coordinate of populated place          
-- feature_code: Type of populated place (see [full list here](https://www.geonames.org/export/codes.html))
-- ctr_[YYYYMMDDHHMMSS]: Control status, with timestamp (UA/RU/CONTESTED)
+- date: Date of map update (YYYYMMDD)
+- status_wiki: Reported control status (UA/RU/CONTESTED), from Wikipedia crowdsourced maps
+- status_boost: Reported control status (UA/RU/CONTESTED), from Wikipedia "boosted" by VIINA event reports
+- status_dsm: Reported control status (UA/RU/CONTESTED), from DeepStateMap
+- status: Reported control status (UA/RU/CONTESTED), "majority vote" of wiki, boost and dsm 
 
-Note that the timestamp reflects the time at which the relevant data were collected (typically every six hours or so), which naturally lags behind the reality on the ground.
-
-Territorial control data are presently missing for the following dates: 2022/03/06-2022/03/07, 2022/05/16-2022/05/18. Data for these dates will be retroactively added in future updates.
-
+Note that the structure of these data have recently changed. Starting August 8, 2023, the data files have switched from a "wide" matrix format (rows are populated places, columns are status at different time points) to "long" panel data format (rows are daily observations for each populated place, columns are control status from different sources). Each daily observation uses the most recently available data from each of the three sources.
