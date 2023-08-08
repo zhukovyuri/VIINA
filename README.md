@@ -89,29 +89,29 @@ Here are the same data, after passing through a "one-per-day" filter to remove p
 
 The data currently include the following event categories:
 
-- t_mil: Event is about war/military operations
-- t_loc: Event report includes reference to specific location
-- t_san: Event report mentions economic sanctions imposed on Russia
-- a_rus: Event initiated by Russian or Russian-aligned armed forces
-- a_ukr: Event initiated by Ukrainian or Ukrainian-aligned armed forces
-- a_civ: Event initiated by civilians
-- a_other: Event initiated by a third party (e.g. U.S., EU, Red Cross)
-- t_aad: Anti-air defense, Buk, shoulder-fired missiles (Igla, Strela, Stinger)
-- t_airstrike: Air strike, strategic bombing, helicopter strike
-- t_airalert: Air raid siren/alert
-- t_armor: Tank battle or assault
-- t_arrest: Arrest by security services or detention of prisoners of war
-- t_artillery: Shelling by field artillery, howitzer, mortar, or rockets like Grad/BM-21, Uragan/BM-27, other Multiple Launch Rocket System (MRLS)
-- t_control: Establishment/claim of territorial control over population center
-- t_firefight: Any exchange of gunfire with handguns, semi-automatic rifles, automatic rifles, machine guns, rocket-propelled grenades (RPGs)
-- t_ied: Improvised explosive device, roadside bomb, landmine, car bomb, explosion 
-- t_raid: Assault/attack by paratroopers or special forces, usually followed by a retreat
-- t_occupy: Occupation of territory or building
-- t_property: Destruction of property or infrastructure
-- t_cyber: Cyber operations, including DDOS attacks, website defacement
-- t_hospital: Attacks on hospitals and humanitarian convoys
-- t_milcas: Event report mentions military casualties
-- t_civcas: Event report mentions civilian casualties
+- `t_mil`: Event is about war/military operations
+- `t_loc`: Event report includes reference to specific location
+- `t_san`: Event report mentions economic sanctions imposed on Russia
+- `a_rus`: Event initiated by Russian or Russian-aligned armed forces
+- `a_ukr`: Event initiated by Ukrainian or Ukrainian-aligned armed forces
+- `a_civ`: Event initiated by civilians
+- `a_other`: Event initiated by a third party (e.g. U.S., EU, Red Cross)
+- `t_aad`: Anti-air defense, Buk, shoulder-fired missiles (Igla, Strela, Stinger)
+- `t_airstrike`: Air strike, strategic bombing, helicopter strike
+- `t_airalert`: Air raid siren/alert
+- `t_armor`: Tank battle or assault
+- `t_arrest`: Arrest by security services or detention of prisoners of war
+- `t_artillery`: Shelling by field artillery, howitzer, mortar, or rockets like Grad/BM-21, Uragan/BM-27, other Multiple Launch Rocket System (MRLS)
+- `t_control`: Establishment/claim of territorial control over population center
+- `t_firefight`: Any exchange of gunfire with handguns, semi-automatic rifles, automatic rifles, machine guns, rocket-propelled grenades (RPGs)
+- `t_ied`: Improvised explosive device, roadside bomb, landmine, car bomb, explosion 
+- `t_raid`: Assault/attack by paratroopers or special forces, usually followed by a retreat
+- `t_occupy`: Occupation of territory or building
+- `t_property`: Destruction of property or infrastructure
+- `t_cyber`: Cyber operations, including DDOS attacks, website defacement
+- `t_hospital`: Attacks on hospitals and humanitarian convoys
+- `t_milcas`: Event report mentions military casualties
+- `t_civcas`: Event report mentions civilian casualties
 
 VIINA 2.0 uses a BERT-based transformer model ([Devlin, et al., 2018](https://doi.org/10.48550/arXiv.1810.04805)) to classify news headlines into the above event categories. Transformers, first developed by Google in 2017, are a class of neural networks that can provide significant performance and efficiency gains over previous generations of recurrent neural networks (RNNs) and convolutional neural networks (CNNs) by using attention, which tracks relationships between elements of the data and enabling significant parallelization. One high-performing and widely-utilized transformer model is Bidirectional Encoder Representations from Transformers (BERT), developed by Google in 2018. This model uses only transformer encoder layers, whereas other models make use of both encoders and decoders, or only decoders. 
 
@@ -350,59 +350,59 @@ A quick guide to what some the words mean:
 ## Codebook
 
 Raw event reports ([Data/event_info_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest.zip))
-- viina_version: Date and time of VIINA data release
-- event_id: Unique event ID
-- event_id_1pd: De-duplicated event ID (from one-per-day filter)
-- date: Date of event report (YYYYMMDD)
-- time: Time of event report (HH:MM)
-- geonameid: Numeric ID of populated place
-- feature_code: Type of populated place (see [full list here](https://www.geonames.org/export/codes.html))
-- asciiname: Name of populated place, ASCII values
-- ADM1_NAME: Name of first-level administrative unit (oblast')
-- ADM1_CODE: Numerical code of first-level administrative unit (oblast')
-- ADM2_NAME: Name of second-level administrative unit (rayon)
-- ADM2_CODE: Numerical code of second-level administrative unit (rayon)
-- longitude: Longitude coordinate of event location
-- latitude: Latitude coordinate of event location
-- GEO_PRECISION: geographic precision of geocoded location
-- GEO_API: Geocoding API used to locate event
-- location: Index of unique locations mentioned in each event
-- address: Address of geocoded location
-- report_id: Unique ID for report that contains the event
-- source: Data source short name
-- url: URL web address of event report
-- text: Text of event report headline/description
-- lang: Language of report (ua is Ukrainian, ru is Russian)
+- `viina_version`: Date and time of VIINA data release
+- `event_id`: Unique event ID
+- `event_id_1pd`: De-duplicated event ID (from one-per-day filter)
+- `date`: Date of event report (YYYYMMDD)
+- `time`: Time of event report (HH:MM)
+- `geonameid`: Numeric ID of populated place
+- `feature_code`: Type of populated place (see [full list here](https://www.geonames.org/export/codes.html))
+- `asciiname`: Name of populated place, ASCII values
+- `ADM1_NAME`: Name of first-level administrative unit (oblast')
+- `ADM1_CODE`: Numerical code of first-level administrative unit (oblast')
+- `ADM2_NAME`: Name of second-level administrative unit (rayon)
+- `ADM2_CODE`: Numerical code of second-level administrative unit (rayon)
+- `longitude`: Longitude coordinate of event location
+- `latitude`: Latitude coordinate of event location
+- `GEO_PRECISION`: geographic precision of geocoded location
+- `GEO_API`: Geocoding API used to locate event
+- `location`: Index of unique locations mentioned in each event
+- `address`: Address of geocoded location
+- `report_id`: Unique ID for report that contains the event
+- `source`: Data source short name
+- `url`: URL web address of event report
+- `text`: Text of event report headline/description
+- `lang`: Language of report (ua is Ukrainian, ru is Russian)
 
 Event reports labeled by actor and tactic ([Data/event_labels_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest.zip)):
-- viina_version: Date and time of VIINA data release
-- event_id: Unique event ID
-- event_id_1pd: De-duplicated event ID (from one-per-day filter)
-- date: Date of event report (YYYYMMDD)
-- time: Time of event report (HH:MM)
-- geonameid: Numeric ID of populated place
-- t_[event type]: Predicted probability (and binary indicator) that report describes event of each type (from BERT model, see above)
-- a_[actor]: Predicted probability (and binary indicator) that report describes event initiated by each actor (from BERT model, see above)
+- `viina_version`: Date and time of VIINA data release
+- `event_id`: Unique event ID
+- `event_id_1pd`: De-duplicated event ID (from one-per-day filter)
+- `date`: Date of event report (YYYYMMDD)
+- `time`: Time of event report (HH:MM)
+- `geonameid`: Numeric ID of populated place
+- `t_[event type]`: Predicted probability (and binary indicator) that report describes event of each type (from BERT model, see above)
+- `a_[actor]`: Predicted probability (and binary indicator) that report describes event initiated by each actor (from BERT model, see above)
 
 De-duplicated event reports and labels ([Data/event_1pd_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest.zip)):
-- viina_version: Date and time of VIINA data release
-- event_id_1pd: De-duplicated event ID (from one-per-day filter)
-- date: Date of event report (YYYYMMDD)
-- n_reports: Number of constitutive event reports 
-- event_ids: IDs of constitutive events (`event_id` in above two files)
-- sources: Sources for constitutive events (`source` in event_info_latest files)
-- geonameid: Numeric ID of populated place
-- feature_code: Type of populated place (see [full list here](https://www.geonames.org/export/codes.html))
-- asciiname: Name of populated place, ASCII values
-- ADM1_NAME: Name of first-level administrative unit (oblast')
-- ADM1_CODE: Numerical code of first-level administrative unit (oblast')
-- ADM2_NAME: Name of second-level administrative unit (rayon)
-- ADM2_CODE: Numerical code of second-level administrative unit (rayon)
-- longitude: Longitude coordinate of event location
-- latitude: Latitude coordinate of event location
-- GEO_PRECISION: geographic precision of geocoded location
-- t_[event type]: Binary indicator for each event type (from BERT model, see above)
-- a_[actor]: Binary indicator for each actor (from BERT model, see above)
+- `viina_version`: Date and time of VIINA data release
+- `event_id_1pd`: De-duplicated event ID (from one-per-day filter)
+- `date`: Date of event report (YYYYMMDD)
+- `n_reports`: Number of constitutive event reports 
+- `event_ids`: IDs of constitutive events (`event_id` in above two files)
+- `sources`: Sources for constitutive events (`source` in event_info_latest files)
+- `geonameid`: Numeric ID of populated place
+- `feature_code`: Type of populated place (see [full list here](https://www.geonames.org/export/codes.html))
+- `asciiname`: Name of populated place, ASCII values
+- `ADM1_NAME`: Name of first-level administrative unit (oblast')
+- `ADM1_CODE`: Numerical code of first-level administrative unit (oblast')
+- `ADM2_NAME`: Name of second-level administrative unit (rayon)
+- `ADM2_CODE`: Numerical code of second-level administrative unit (rayon)
+- `longitude`: Longitude coordinate of event location
+- `latitude`: Latitude coordinate of event location
+- `GEO_PRECISION`: geographic precision of geocoded location
+- `t_[event type]`: Binary indicator for each event type (from BERT model, see above)
+- `a_[actor]`: Binary indicator for each actor (from BERT model, see above)
 
 
 ## Territorial control
@@ -415,11 +415,11 @@ The full set of Ukrainian populated places (N = 33,156) includes all locations i
 
 Each territorial control dataset includes the following fields:
 
-- geonameid: Numeric ID of populated place
-- date: Date of map update (YYYYMMDD)
-- status_wiki: Reported control status (UA/RU/CONTESTED), from Wikipedia crowdsourced maps
-- status_boost: Reported control status (UA/RU/CONTESTED), from Wikipedia "boosted" by VIINA event reports
-- status_dsm: Reported control status (UA/RU/CONTESTED), from DeepStateMap
-- status: Reported control status (UA/RU/CONTESTED), "majority vote" of wiki, boost and dsm 
+- `geonameid`: Numeric ID of populated place
+- `date`: Date of map update (YYYYMMDD)
+- `status_wiki`: Reported control status (UA/RU/CONTESTED), from Wikipedia crowdsourced maps
+- `status_boost`: Reported control status (UA/RU/CONTESTED), from Wikipedia "boosted" by VIINA event reports
+- `status_dsm`: Reported control status (UA/RU/CONTESTED), from DeepStateMap
+- `status`: Reported control status (UA/RU/CONTESTED), "majority vote" of wiki, boost and dsm 
 
 Note that the structure of these data have recently changed. Starting August 8, 2023, the data files have switched from a "wide" matrix format (rows are populated places, columns are status at different time points) to "long" panel data format (rows are daily observations for each populated place, columns are control status from different sources). Each daily observation uses the most recently available data from each of the three sources.
