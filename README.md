@@ -411,11 +411,11 @@ De-duplicated event reports and labels ([Data/event_1pd_latest.zip](https://gith
 
 VIINA data on territorial control are based on three sources: VIINA event reports on territorial control, polygon map layers from DeepStateMap, and crowdsourced control maps from Wikipedia. In cases where the three data sources disagree, a "majority vote" rule is used to determine whether a populated place is under the control of Ukrainian forces, Russian forces, or is being actively contested between the two. 
 
-The full set of Ukrainian populated places (N = 33,156) includes all locations in the [GeoNames gazetteer](https://www.geonames.org/) with feature_code's beginning in PPL\*.
+The full set of Ukrainian populated places (N = 33,141) includes all locations in the [GeoNames gazetteer](https://www.geonames.org/) with feature_code's beginning in PPL\*.
 
 Each territorial control dataset includes the following fields:
 
-- `geonameid`: Numeric ID of populated place
+- `geonameid`: Numeric ID of populated place (can be linked to geometries in [gn_UA_tess.geojson](https://github.com/zhukovyuri/VIINA/tree/master/Data/gn_UA_tess.geojson))
 - `date`: Date of map update (YYYYMMDD)
 - `status_wiki`: Reported control status (UA/RU/CONTESTED), from Wikipedia crowdsourced maps
 - `status_boost`: Reported control status (UA/RU/CONTESTED), from Wikipedia "boosted" by VIINA event reports
