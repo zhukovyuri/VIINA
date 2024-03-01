@@ -16,8 +16,8 @@ The most recent versions these data are available as a comma-delimited-text (csv
 - [Data/control_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest.zip) | Territorial control status
 - [Data/event_info_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2022.zip) | Raw event reports for 2022 (locations, dates, urls, headlines)
 - [Data/event_info_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2023.zip) | Raw event reports for 2023 (locations, dates, urls, headlines)
-- [Data/event_labels_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest_2022.zip) | Event reports for 2022, labeled by actor and tactic (from LSTM model)
-- [Data/event_labels_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest_2023.zip) | Event reports for 2023, labeled by actor and tactic (from LSTM model)
+- [Data/event_labels_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest_2022.zip) | Event reports for 2022, labeled by actor and tactic (from BERT model)
+- [Data/event_labels_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest_2023.zip) | Event reports for 2023, labeled by actor and tactic (from BERT model)
 - [Data/event_1pd_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest_2022.zip) | De-duplicated event reports and labels for 2022 ("one-per-day" filter)
 - [Data/event_1pd_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest_2023.zip) | De-duplicated event reports and labels for 2023 ("one-per-day" filter)
 
@@ -31,7 +31,7 @@ Also included are tessellated geometries of Ukrainian populated places (N = 33,1
 
 For additional information on VIINA (1.0) and illustrative analyses, see:
 
- - Zhukov, Yuri (2023). "Near-Real Time Analysis of War and Economic Activity during Russia’s Invasion of Ukraine." *Journal of Comparative Economics* ([doi.org/10.1016/j.jce.2023.06.003](https://doi.org/10.1016/j.jce.2023.06.003)). Offprint [available here](https://zhukovyuri.github.io/files/2023_Zhukov_JCE.pdf).
+ - Zhukov, Yuri (2023). "Near-Real Time Analysis of War and Economic Activity during Russia’s Invasion of Ukraine." *Journal of Comparative Economics* 51 (4): 1232-1243 ([doi.org/10.1016/j.jce.2023.06.003](https://doi.org/10.1016/j.jce.2023.06.003)). Offprint [available here](https://zhukovyuri.github.io/files/2023_Zhukov_JCE.pdf).
 
 Please cite VIINA 2.0 data as:
 
