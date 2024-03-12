@@ -16,10 +16,13 @@ The most recent versions these data are available as a comma-delimited-text (csv
 - [Data/control_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest.zip) | Territorial control status
 - [Data/event_info_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2022.zip) | Raw event reports for 2022 (locations, dates, urls, headlines)
 - [Data/event_info_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2023.zip) | Raw event reports for 2023 (locations, dates, urls, headlines)
+- [Data/event_info_latest_2024.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2024.zip) | Raw event reports for 2024 (locations, dates, urls, headlines)
 - [Data/event_labels_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest_2022.zip) | Event reports for 2022, labeled by actor and tactic (from BERT model)
 - [Data/event_labels_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest_2023.zip) | Event reports for 2023, labeled by actor and tactic (from BERT model)
+- [Data/event_labels_latest_2024.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest_2024.zip) | Event reports for 2024, labeled by actor and tactic (from BERT model)
 - [Data/event_1pd_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest_2022.zip) | De-duplicated event reports and labels for 2022 ("one-per-day" filter)
 - [Data/event_1pd_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest_2023.zip) | De-duplicated event reports and labels for 2023 ("one-per-day" filter)
+- [Data/event_1pd_latest_2024.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest_2024.zip) | De-duplicated event reports and labels for 2024 ("one-per-day" filter)
 
 Note that each event data release includes both raw event reports (`event_info`, `event_labels`) and a simplified, de-duplicated data file (`event_1pd`). The latter uses a "one-per-day" filter to remove potential duplicate event reports, by treating multiple event reports of the same type (i.e. same combination of actor and tactic labels) in the same populated place on the same day as a single unique event.
 
