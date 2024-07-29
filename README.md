@@ -38,7 +38,7 @@ For additional information on VIINA (1.0) and illustrative analyses, see:
 
 Please cite VIINA 2.0 data as:
 
- - Zhukov, Yuri and Natalie Ayers (2023). "VIINA 2.0: Violent Incident Information from News Articles on the 2022 Russian Invasion of Ukraine." Cambridge, MA: Harvard University. ([https://github.com/zhukovyuri/VIINA](github.com/zhukovyuri/VIINA), accessed [DATE]).
+ - Zhukov, Yuri and Natalie Ayers (2023). "VIINA 2.0: Violent Incident Information from News Articles on the 2022 Russian Invasion of Ukraine." Cambridge, MA: Harvard University. ([https://github.com/zhukovyuri/VIINA](github.com/zhukovyuri/VIINA), accessed 28APR24).
 
 Corrections, feedback welcome: 
 
