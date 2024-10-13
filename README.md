@@ -44,7 +44,7 @@ Please cite VIINA 2.0 data as:
 
 Corrections, feedback welcome: 
 
-Yuri M. Zhukov. Associate Professor, School of Foreign Service, Georgetown University. yzhukov-at-georgetown-dot-edu. [zhukovyuri.github.io](https://zhukovyuri.github.io).
+Yuri M. Zhukov. Associate Professor, School of Foreign Service, Georgetown University. ymz2-at-georgetown-dot-edu. [zhukovyuri.github.io](https://zhukovyuri.github.io).
 
 Learn more about *VIINA*:
 
