@@ -13,7 +13,9 @@ VIINA is updated daily, and is freely available for use by students, journalists
 
 The most recent versions these data are available as a comma-delimited-text (csv) files within the following compressed ZIP archives:
 
-- [Data/control_latest.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest.zip) | Territorial control status
+- [Data/control_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest_2022.zip) | Territorial control daily status for 2022
+- [Data/control_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest_2023.zip) | Territorial control daily status for 2023
+- [Data/control_latest_2024.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest_2024.zip) | Territorial control daily status for 2024
 - [Data/event_info_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2022.zip) | Raw event reports for 2022 (locations, dates, urls, headlines)
 - [Data/event_info_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2023.zip) | Raw event reports for 2023 (locations, dates, urls, headlines)
 - [Data/event_info_latest_2024.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2024.zip) | Raw event reports for 2024 (locations, dates, urls, headlines)
@@ -42,9 +44,18 @@ Please cite VIINA 2.0 data as:
 
 Corrections, feedback welcome: 
 
-Yuri M. Zhukov. Visiting Associate Professor of Public Policy, Harvard Kennedy School. yzhukov-at-hks-dot-harvard-dot-edu. [zhukovyuri.github.io](https://zhukovyuri.github.io).
+Yuri M. Zhukov. Associate Professor, School of Foreign Service, Georgetown University. yzhukov-at-georgetown-dot-edu. [zhukovyuri.github.io](https://zhukovyuri.github.io).
 
-## Data Sources
+Learn more about *VIINA*:
+
+- [Event data sources](#event-data-sources)
+- [Event data geocoding](#geocoding)
+- [Event data classification model](#event-classification)
+- [Event data variable names](#codebook)
+- [Territorial control data and sources](#territorial-control)
+
+
+## Event Data Sources
 
 **VIINA 2.0** draws on news reports from the following Ukrainian and Russian news providers:
 
@@ -415,7 +426,16 @@ De-duplicated event reports and labels ([Data/event_1pd_latest_2022.zip](https:/
 
 ![All events](Figures/Maps/map_ctr_latest.png)
 
-VIINA data on territorial control are based on three sources: VIINA event reports on territorial control, polygon map layers from DeepStateMap, and crowdsourced control maps from Wikipedia. In cases where the three data sources disagree, a "majority vote" rule is used to determine whether a populated place is under the control of Ukrainian forces, Russian forces, or is being actively contested between the two. 
+VIINA data on territorial control are based on four sources: 
+
+1. VIINA event reports on territorial control
+2. Polygon map layers from DeepStateMap (Ukraine)
+3. Polygon map layers from Institute for the Study of War (U.S.)
+4. Crowdsourced control maps from Wikipedia 
+
+In cases where these data sources disagree, a "majority vote" rule is used to determine whether a populated place is under the control of Ukrainian forces, Russian forces, or is being actively contested between the two. If these "votes" are evenly split, ties are broken in favor of DeepStateMap.
+
+Note that Institute for the Study of War (ISW) territorial control data are updated less frequently than the other three sources. Currently VIINA includes ISW data from 2/23/2024 to 6/30/2024.
 
 The full set of Ukrainian populated places (N = 33,141) includes all locations in the [GeoNames gazetteer](https://www.geonames.org/) with feature_code's beginning in PPL\*.
 
@@ -426,6 +446,8 @@ Each territorial control dataset includes the following fields:
 - `status_wiki`: Reported control status (UA/RU/CONTESTED), from Wikipedia crowdsourced maps
 - `status_boost`: Reported control status (UA/RU/CONTESTED), from Wikipedia "boosted" by VIINA event reports
 - `status_dsm`: Reported control status (UA/RU/CONTESTED), from DeepStateMap
+- `status_isw`: Reported control status (UA/RU/CONTESTED), from Institute for the Study of War
 - `status`: Reported control status (UA/RU/CONTESTED), "majority vote" of wiki, boost and dsm 
+- `vcontrol_version`: Date and time of VIINA territorial control data release
 
-Note that the structure of these data have recently changed. Starting August 8, 2023, the data files have switched from a "wide" matrix format (rows are populated places, columns are status at different time points) to "long" panel data format (rows are daily observations for each populated place, columns are control status from different sources). Each daily observation uses the most recently available data from each of the three sources.
+Note that the structure of these data have recently changed. Starting October 13, 2024, the data files are split by calendar year. Each yearly file follows the same "long" panel data format (rows are daily observations for each populated place, columns are control status from different sources).  
