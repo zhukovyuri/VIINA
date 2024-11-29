@@ -435,7 +435,7 @@ VIINA data on territorial control are based on four sources:
 
 In cases where these data sources disagree, a "majority vote" rule is used to determine whether a populated place is under the control of Ukrainian forces, Russian forces, or is being actively contested between the two. If these "votes" are evenly split, ties are broken in favor of DeepStateMap.
 
-Note that Institute for the Study of War (ISW) territorial control data are updated less frequently than the other three sources. Currently VIINA includes ISW data from 2/23/2024 to 6/30/2024.
+Note that Institute for the Study of War (ISW) territorial control data are updated less frequently than the other three sources. Currently VIINA includes ISW data from 2/23/2024 to 9/19/2024.
 
 The full set of Ukrainian populated places (N = 33,141) includes all locations in the [GeoNames gazetteer](https://www.geonames.org/) with feature_code's beginning in PPL\*.
 
