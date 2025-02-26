@@ -59,7 +59,38 @@ Learn more about *VIINA*:
 - [Territorial control data and sources](#territorial-control)
 
 
-## Event Data Sources
+## Territorial Control Data
+
+![Current status](Figures/Maps/map_ctr_latest.png)
+
+VIINA data on territorial control are based on four sources: 
+
+1. VIINA event reports on territorial control
+2. Polygon map layers from DeepStateMap (Ukraine)
+3. Polygon map layers from Institute for the Study of War (U.S.)
+4. Crowdsourced control maps from Wikipedia 
+
+In cases where these data sources disagree, a "majority vote" rule is used to determine whether a populated place is under the control of Ukrainian forces, Russian forces, or is being actively contested between the two. If these "votes" are evenly split, ties are broken in favor of DeepStateMap.
+
+Note that Institute for the Study of War (ISW) territorial control data are updated less frequently than the other three sources. 
+
+The full set of Ukrainian populated places (N = 33,141) includes all locations in the [GeoNames gazetteer](https://www.geonames.org/) with feature_code's beginning in PPL\*.
+
+Each territorial control dataset includes the following fields:
+
+- `geonameid`: Numeric ID of populated place (can be linked to geometries in [gn_UA_tess.geojson](https://github.com/zhukovyuri/VIINA/tree/master/Data/gn_UA_tess.geojson))
+- `date`: Date of map update (YYYYMMDD)
+- `status_wiki`: Reported control status (UA/RU/CONTESTED), from Wikipedia crowdsourced maps
+- `status_boost`: Reported control status (UA/RU/CONTESTED), from Wikipedia "boosted" by VIINA event reports
+- `status_dsm`: Reported control status (UA/RU/CONTESTED), from DeepStateMap
+- `status_isw`: Reported control status (UA/RU/CONTESTED), from Institute for the Study of War
+- `status`: Reported control status (UA/RU/CONTESTED), "majority vote" of wiki, boost and dsm 
+- `vcontrol_version`: Date and time of VIINA territorial control data release
+
+Note that the structure of these data have recently changed. Starting October 13, 2024, the data files are split by calendar year. Each yearly file follows the same "long" panel data format (rows are daily observations for each populated place, columns are control status from different sources).  
+
+
+## Event Data
 
 **VIINA 2.0** draws on news reports from the following Ukrainian and Russian news providers:
 
@@ -425,36 +456,6 @@ De-duplicated event reports and labels ([Data/event_1pd_latest_2022.zip](https:/
 - `t_[event type]`: Binary indicator for each event type (from BERT model, see above)
 - `a_[actor]`: Binary indicator for each actor (from BERT model, see above)
 
-
-## Territorial control
-
-![All events](Figures/Maps/map_ctr_latest.png)
-
-VIINA data on territorial control are based on four sources: 
-
-1. VIINA event reports on territorial control
-2. Polygon map layers from DeepStateMap (Ukraine)
-3. Polygon map layers from Institute for the Study of War (U.S.)
-4. Crowdsourced control maps from Wikipedia 
-
-In cases where these data sources disagree, a "majority vote" rule is used to determine whether a populated place is under the control of Ukrainian forces, Russian forces, or is being actively contested between the two. If these "votes" are evenly split, ties are broken in favor of DeepStateMap.
-
-Note that Institute for the Study of War (ISW) territorial control data are updated less frequently than the other three sources. 
-
-The full set of Ukrainian populated places (N = 33,141) includes all locations in the [GeoNames gazetteer](https://www.geonames.org/) with feature_code's beginning in PPL\*.
-
-Each territorial control dataset includes the following fields:
-
-- `geonameid`: Numeric ID of populated place (can be linked to geometries in [gn_UA_tess.geojson](https://github.com/zhukovyuri/VIINA/tree/master/Data/gn_UA_tess.geojson))
-- `date`: Date of map update (YYYYMMDD)
-- `status_wiki`: Reported control status (UA/RU/CONTESTED), from Wikipedia crowdsourced maps
-- `status_boost`: Reported control status (UA/RU/CONTESTED), from Wikipedia "boosted" by VIINA event reports
-- `status_dsm`: Reported control status (UA/RU/CONTESTED), from DeepStateMap
-- `status_isw`: Reported control status (UA/RU/CONTESTED), from Institute for the Study of War
-- `status`: Reported control status (UA/RU/CONTESTED), "majority vote" of wiki, boost and dsm 
-- `vcontrol_version`: Date and time of VIINA territorial control data release
-
-Note that the structure of these data have recently changed. Starting October 13, 2024, the data files are split by calendar year. Each yearly file follows the same "long" panel data format (rows are daily observations for each populated place, columns are control status from different sources).  
 
 ## Open Data Commons Open Database License
 
