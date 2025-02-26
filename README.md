@@ -401,7 +401,7 @@ A quick guide to what some the words mean:
 
 ## Codebook
 
-Raw event reports ([Data/event_info_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2022.zip), [Data/event_info_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2023.zip))
+Raw event reports ([Data/event_info_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2022.zip), [Data/event_info_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2023.zip), [Data/event_info_latest_2024.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2024.zip), [Data/event_info_latest_2025.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2025.zip))
 - `viina_version`: Date and time of VIINA data release
 - `event_id`: Unique event ID
 - `event_id_1pd`: De-duplicated event ID (from one-per-day filter)
@@ -426,7 +426,7 @@ Raw event reports ([Data/event_info_latest_2022.zip](https://github.com/zhukovyu
 - `text`: Text of event report headline/description
 - `lang`: Language of report (ua is Ukrainian, ru is Russian)
 
-Event reports labeled by actor and tactic ([Data/event_labels_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest_2022.zip), [Data/event_labels_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest_2023.zip)):
+Event reports labeled by actor and tactic ([Data/event_labels_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest_2022.zip), [Data/event_labels_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest_2023.zip), [Data/event_labels_latest_2024.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest_2024.zip), [Data/event_labels_latest_2025.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_labels_latest_2025.zip)):
 - `viina_version`: Date and time of VIINA data release
 - `event_id`: Unique event ID
 - `event_id_1pd`: De-duplicated event ID (from one-per-day filter)
@@ -436,7 +436,7 @@ Event reports labeled by actor and tactic ([Data/event_labels_latest_2022.zip](h
 - `t_[event type]`: Predicted probability (and binary indicator) that report describes event of each type (from BERT model, see above)
 - `a_[actor]`: Predicted probability (and binary indicator) that report describes event initiated by each actor (from BERT model, see above)
 
-De-duplicated event reports and labels ([Data/event_1pd_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest_2022.zip), [Data/event_1pd_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest_2023.zip)):
+De-duplicated event reports and labels ([Data/event_1pd_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest_2022.zip), [Data/event_1pd_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest_2023.zip), [Data/event_1pd_latest_2024.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest_2024.zip), [Data/event_1pd_latest_2025.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_1pd_latest_2025.zip)):
 - `viina_version`: Date and time of VIINA data release
 - `event_id_1pd`: De-duplicated event ID (from one-per-day filter)
 - `date`: Date of event report (YYYYMMDD)
