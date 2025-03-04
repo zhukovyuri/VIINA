@@ -13,10 +13,14 @@ VIINA is updated daily, and is freely available for use by students, journalists
 
 The most recent versions these data are available as a comma-delimited-text (csv) files within the following compressed ZIP archives:
 
-- [Data/control_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest_2022.zip) | Territorial control daily status for 2022
-- [Data/control_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest_2023.zip) | Territorial control daily status for 2023
-- [Data/control_latest_2024.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest_2024.zip) | Territorial control daily status for 2024
-- [Data/control_latest_2025.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest_2025.zip) | Territorial control daily status for 2025
+- [Data/control_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest_2022.zip) | Territorial control daily status for 2022 (GeoNames locations)
+- [Data/control_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest_2023.zip) | Territorial control daily status for 2023 (GeoNames locations)
+- [Data/control_latest_2024.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest_2024.zip) | Territorial control daily status for 2024 (GeoNames locations)
+- [Data/control_latest_2025.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/control_latest_2025.zip) | Territorial control daily status for 2025 (GeoNames locations)
+- [Data/kontrol_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/kontrol_latest_2022.zip) | Territorial control daily status for 2022 (KATOTTH locations)
+- [Data/kontrol_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/kontrol_latest_2023.zip) | Territorial control daily status for 2023 (KATOTTH locations)
+- [Data/kontrol_latest_2024.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/kontrol_latest_2024.zip) | Territorial control daily status for 2024 (KATOTTH locations)
+- [Data/kontrol_latest_2025.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/kontrol_latest_2025.zip) | Territorial control daily status for 2025 (KATOTTH locations)
 - [Data/event_info_latest_2022.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2022.zip) | Raw event reports for 2022 (locations, dates, urls, headlines)
 - [Data/event_info_latest_2023.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2023.zip) | Raw event reports for 2023 (locations, dates, urls, headlines)
 - [Data/event_info_latest_2024.zip](https://github.com/zhukovyuri/VIINA/tree/master/Data/event_info_latest_2024.zip) | Raw event reports for 2024 (locations, dates, urls, headlines)
@@ -34,9 +38,10 @@ Note that each event data release includes both raw event reports (`event_info`,
 
 Previous data versions are available by request (email me).
 
-Also included are tessellated geometries of Ukrainian populated places (N = 33,141), which were used to create some of the maps on this site. These can be matched to the territorial control data by the variable `geonameid`:
+Also included are tessellated geometries of Ukrainian populated places, which were used to create some of the maps on this site. These can be matched to the territorial control data by the variable `geonameid` (`control*` datasets) or `kod` (`kontrol*` datasets):
 
-- [Data/gn_UA_tess.geojson](https://github.com/zhukovyuri/VIINA/tree/master/Data/gn_UA_tess.geojson)
+- [Data/gn_UA_tess.geojson](https://github.com/zhukovyuri/VIINA/tree/master/Data/gn_UA_tess.geojson)  (N = 33,141 populated places)
+- [Data/katotth_UA_tess.geojson](https://github.com/zhukovyuri/VIINA/tree/master/Data/katotth_UA_tess.geojson)  (N = 29,724 populated places)
 
 For additional information on VIINA (1.0) and illustrative analyses, see:
 
@@ -52,11 +57,11 @@ Yuri M. Zhukov. Associate Professor, School of Foreign Service, Georgetown Unive
 
 Learn more about *VIINA*:
 
+- [Territorial control data and sources](#territorial-control)
 - [Event data sources](#event-data-sources)
 - [Event data geocoding](#geocoding)
 - [Event data classification model](#event-classification)
 - [Event data variable names](#codebook)
-- [Territorial control data and sources](#territorial-control)
 
 
 ## Territorial Control Data
@@ -74,11 +79,14 @@ In cases where these data sources disagree, a "majority vote" rule is used to de
 
 Note that Institute for the Study of War (ISW) territorial control data are updated less frequently than the other three sources. 
 
-The full set of Ukrainian populated places (N = 33,141) includes all locations in the [GeoNames gazetteer](https://www.geonames.org/) with feature_code's beginning in PPL\*.
+Territorial control data are available for two sets of geographic units.
+The first (`control`) includes full set of Ukrainian populated places in the [GeoNames gazetteer](https://www.geonames.org/) (N = 33,141), with feature_code's beginning in PPL\*.
+The second (`kontrol`) uses Ukraine's national register of administrative divisions, [KATOTTH](https://en.wikipedia.org/wiki/Codifier_of_administrative-territorial_units_and_territories_of_territorial_communities) (N = 29,724), which can be more easily merged with official government statistics.
 
 Each territorial control dataset includes the following fields:
 
-- `geonameid`: Numeric ID of populated place (can be linked to geometries in [gn_UA_tess.geojson](https://github.com/zhukovyuri/VIINA/tree/master/Data/gn_UA_tess.geojson))
+- `geonameid` (in `control*` datasets only): Numeric ID of populated place (can be linked to geometries in [gn_UA_tess.geojson](https://github.com/zhukovyuri/VIINA/tree/master/Data/gn_UA_tess.geojson))
+- `kod` (in `kontrol*` datasets only): KATOTTH code of populated place (can be linked to geometries in [katotth_UA_tess.geojson](https://github.com/zhukovyuri/VIINA/tree/master/Data/katotth_UA_tess.geojson))
 - `date`: Date of map update (YYYYMMDD)
 - `status_wiki`: Reported control status (UA/RU/CONTESTED), from Wikipedia crowdsourced maps
 - `status_boost`: Reported control status (UA/RU/CONTESTED), from Wikipedia "boosted" by VIINA event reports
