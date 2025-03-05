@@ -152,12 +152,15 @@ The data currently include the following event categories:
 - `t_mil`: Event is about war/military operations
 - `t_loc`: Event report includes reference to specific location
 - `t_san`: Event report mentions economic sanctions imposed on Russia
-- `a_rus`: Event initiated by Russian or Russian-aligned armed forces
-- `a_ukr`: Event initiated by Ukrainian or Ukrainian-aligned armed forces
+- `a_rus`: Event involves Russian or Russian-aligned armed forces
+- `a_ukr`: Event involves Ukrainian or Ukrainian-aligned armed forces
+- `a_rus_init`: Event initiated by Russian or Russian-aligned armed forces
+- `a_ukr_init`: Event initiated by Ukrainian or Ukrainian-aligned armed forces
 - `a_civ`: Event initiated by civilians
 - `a_other`: Event initiated by a third party (e.g. U.S., EU, Red Cross)
 - `t_aad`: Anti-air defense, Buk, shoulder-fired missiles (Igla, Strela, Stinger)
 - `t_airstrike`: Air strike, strategic bombing, helicopter strike
+- `t_uav`: Unmanned or remotely-piloted aerial vehicle
 - `t_airalert`: Air raid siren/alert
 - `t_armor`: Tank battle or assault
 - `t_arrest`: Arrest by security services or detention of prisoners of war
@@ -226,30 +229,31 @@ Below are detailed out-of-same prediction accuracy statistics for each variable,
 
 |variable    |  f1-score| support|  accuracy|   roc-auc| thresholds|
 |:-----------|---------:|-------:|---------:|---------:|----------:|
-|t_mil       | 0.8531469|     137| 0.9146341| 0.9510229|      0.955|
+|t_mil       | 0.9132791|     357| 0.9117241| 0.9686625|        0.5|
 |t_loc       | 0.8918919|     105| 0.9512195| 0.9799434|      0.501|
 |t_san       | 0.7397260|      35| 0.9613821| 0.8817756|      0.967|
-|a_rus       | 0.7346939|      50| 0.9471545| 0.9491855|      0.893|
-|a_ukr       | 0.7450980|      29| 0.9735772| 0.9323006|      0.857|
-|a_civ       | 0.3636364|       3| 0.9857724| 0.8302658|      0.217|
-|a_other     | 0.3888889|      20| 0.9552846| 0.8152542|      0.747|
-|t_aad       | 1.0000000|       2| 1.0000000| 1.0000000|      0.075|
-|t_airstrike | 0.8571429|       4| 0.9979675| 0.9390369|      0.054|
-|t_armor     | 0.0000000|       0| 1.0000000|        NA|      0.500|
-|t_arrest    | 0.6363636|       8| 0.9837398| 0.9857955|      0.025|
-|t_artillery | 0.8888889|      34| 0.9837398| 0.9915875|      0.045|
-|t_control   | 0.6666667|       5| 0.9918699| 0.9075975|      0.017|
-|t_firefight | 0.5000000|       3| 0.9959350| 0.9727335|      0.589|
-|t_ied       | 1.0000000|       4| 1.0000000| 1.0000000|      0.753|
-|t_property  | 0.5714286|      11| 0.9817073| 0.9293139|      0.143|
-|t_raid      | 0.5000000|       1| 0.9959350| 0.9959267|      0.065|
-|t_occupy    | 1.0000000|       1| 1.0000000| 1.0000000|      0.059|
-|t_cyber     | 1.0000000|      11| 1.0000000| 1.0000000|      0.044|
-|t_hospital  | 0.0000000|       0| 1.0000000|        NA|      0.500|
-|t_milcas    | 0.8000000|       9| 0.9939024| 0.9878077|      0.457|
-|t_civcas    | 0.9600000|      13| 0.9979675| 0.9991970|      0.968|
+|a_rus       | 0.8832630|     353| 0.8855172| 0.9475159|        0.5|
+|a_ukr       | 0.8286067|     371| 0.8082759| 0.8863889|        0.5|
+|a_rus_init  | 0.8193384|     200| 0.9020690| 0.9428143|        0.5|
+|a_ukr_init  | 0.7649770|     109| 0.9296552| 0.9498243|        0.5|
+|a_civ       | 0.5270270|      73| 0.9034483| 0.8776788|        0.5|
+|a_other     | 0.8612903|     309| 0.8813793| 0.9390676|        0.5|
+|t_aad       | 0.6470588|      19| 0.9834483| 0.9234382|        0.5|
+|t_airstrike | 0.6666667|      12| 0.9875862| 0.9945068|        0.5|
+|t_airalert  | 1.0000000|       8| 1.0000000| 1.0000000|        0.5|
+|t_uav       | 0.8404255|      97| 0.9586207| 0.9380951|        0.5|
+|t_armor     | 0.9247312|      46| 0.9903448| 0.9906832|        0.5|
+|t_arrest    | 0.5142857|      17| 0.9765517| 0.9345297|        0.5|
+|t_artillery | 0.7757576|      80| 0.9489655| 0.9567054|        0.5|
+|t_control   | 0.6612903|      54| 0.9420690| 0.9306453|        0.5|
+|t_firefight | 0.5714286|      14| 0.9834483| 0.9905566|        0.5|
+|t_raid      | 0.5714286|      18| 0.9751724| 0.9767405|        0.5|
+|t_occupy    | 0.6451613|      33| 0.9696552| 0.8901734|        0.5|
+|t_property  | 0.8220339|     117| 0.9420690| 0.9577640|        0.5|
+|t_cyber     | 0.5000000|       3| 0.9972414| 0.7539243|        0.5|
 |t_retreat   | 0.2857143|       1| 0.9898374| 0.9918534|      0.005|
-|t_airalert  | 0.7500000|       5| 0.9959350| 0.8078029|      0.008|
+|t_milcas    | 0.5000000|      25| 0.9641379| 0.9379143|        0.5|
+|t_civcas    | 0.7083333|      50| 0.9613793| 0.9578667|        0.5|
 
 This table is available in csv format here: 
 
